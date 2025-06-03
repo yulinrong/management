@@ -1,0 +1,3780 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBA财务管理试题汇总 | Financial Management Questions Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 3px solid #667eea;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+
+        .navigation {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .nav-link {
+            color: #667eea;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+
+        .question-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .question-table th {
+            background: #f8f9fa;
+            color: #2c3e50;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .question-table td {
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+            vertical-align: top;
+        }
+
+        .question-table tr:hover {
+            background: #f8f9fa;
+            transition: background 0.3s ease;
+        }
+
+        .question-cell {
+            width: 35%;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .knowledge-cell {
+            width: 25%;
+            color: #7f8c8d;
+        }
+
+        .answer-cell {
+            width: 40%;
+            color: #34495e;
+            line-height: 1.7;
+        }
+
+        .question-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .question-content {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .sub-question {
+            margin: 10px 0;
+            padding-left: 15px;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .knowledge-tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin: 2px;
+        }
+
+        .knowledge-point {
+            margin: 8px 0;
+            padding: 8px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .answer-section {
+            margin-bottom: 20px;
+        }
+
+        .answer-header {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+
+        .calculation {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .result {
+            background: #d4edda;
+            color: #155724;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 5px 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .formula {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 8px 0;
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .formula-inline {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            color: #1976d2;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+            font-weight: bold;
+            border: 1px solid #2196f3;
+        }
+
+        .formula-box {
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .topic-coverage {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .coverage-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .coverage-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .coverage-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #dee2e6;
+            vertical-align: top;
+        }
+
+        .coverage-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .coverage-table tr:hover {
+            background: #e3f2fd;
+        }
+
+        .set-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin: 2px;
+        }
+
+        .table-data {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .table-data th,
+        .table-data td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .table-data th {
+            background: #f2f2f2;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .question-table th,
+            .question-table td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .question-cell,
+            .knowledge-cell,
+            .answer-cell {
+                width: auto;
+                display: block;
+            }
+
+            .question-table tr {
+                display: block;
+                margin-bottom: 20px;
+                border: 1px solid #e9ecef;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .question-table td {
+                display: block;
+                border-bottom: 1px solid #f1f3f4;
+            }
+
+            .question-table td:last-child {
+                border-bottom: none;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .container {
+                box-shadow: none;
+                background: white;
+                margin: 0;
+            }
+
+            .navigation {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DBA财务管理试题汇总 | Financial Management Questions Collection</h1>
+            <p>Sets 5-9 完整版 | Complete Edition with Detailed Knowledge Points</p>
+        </div>
+
+        <!-- Topic 覆盖统计表 -->
+        <div class="topic-coverage">
+            <h2 style="color: #2c3e50; margin-bottom: 15px; text-align: center;">
+                📊 各Topic文档考题覆盖统计 | Topic Document Coverage Statistics
+            </h2>
+            <table class="coverage-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Topic文档</th>
+                        <th style="width: 15%;">章节范围</th>
+                        <th style="width: 45%;">覆盖考题 (卷号-题号)</th>
+                        <th style="width: 15%;">题目总数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Topic 5: Capital Budgeting Techniques</strong><br>资本预算技术</td>
+                        <td>Chapter 11</td>
+                        <td>
+                            <span class="set-badge">Set 5-Q1</span>
+                            <span class="set-badge">Set 6-Q1</span>
+                            <span class="set-badge">Set 7-Q1</span>
+                            <span class="set-badge">Set 8-Q1</span>
+                            <span class="set-badge">Set 9-Q1</span>
+                        </td>
+                        <td style="text-align: center; font-weight: bold; color: #667eea;">5题</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Topic 6: Bond Valuation and Interest</strong><br>债券估值与利率</td>
+                        <td>Chapter 6</td>
+                        <td>
+                            <span class="set-badge">Set 5-Q2a,b</span>
+                            <span class="set-badge">Set 6-Q2a,b</span>
+                            <span class="set-badge">Set 7-Q2a</span>
+                            <span class="set-badge">Set 8-Q2a</span>
+                            <span class="set-badge">Set 9-Q2a</span>
+                        </td>
+                        <td style="text-align: center; font-weight: bold; color: #667eea;">5题</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Topic 7: Stock Valuation and Cost of Capital</strong><br>股票估值与资本成本</td>
+                        <td>Chapters 7&9</td>
+                        <td>
+                            <span class="set-badge">Set 5-Q2c,d</span>
+                            <span class="set-badge">Set 6-Q2c,d</span>
+                            <span class="set-badge">Set 7-Q2b,c</span>
+                            <span class="set-badge">Set 8-Q2b,c</span>
+                            <span class="set-badge">Set 9-Q2b,c</span>
+                        </td>
+                        <td style="text-align: center; font-weight: bold; color: #667eea;">5题</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Topic 8: Working Capital Management</strong><br>营运资本管理</td>
+                        <td>Chapters 15&16</td>
+                        <td>
+                            <span class="set-badge">Set 5-Q3</span>
+                            <span class="set-badge">Set 6-Q3</span>
+                            <span class="set-badge">Set 7-Q3</span>
+                            <span class="set-badge">Set 8-Q3</span>
+                            <span class="set-badge">Set 9-Q3</span>
+                        </td>
+                        <td style="text-align: center; font-weight: bold; color: #667eea;">5题</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Topic 9: Personal Finance and Wealth Management</strong><br>个人财务规划与财富管理</td>
+                        <td>Chapters 1&2</td>
+                        <td>
+                            <span class="set-badge">Set 5-Q4</span>
+                            <span class="set-badge">Set 6-Q4</span>
+                            <span class="set-badge">Set 7-Q4</span>
+                            <span class="set-badge">Set 8-Q4</span>
+                            <span class="set-badge">Set 9-Q4</span>
+                        </td>
+                        <td style="text-align: center; font-weight: bold; color: #667eea;">5题</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center; margin-top: 15px; padding: 10px; background: #e3f2fd; border-radius: 6px;">
+                <strong style="color: #1976d2;">总计：5个Topic文档 × 5套试卷 = 25个核心考题全覆盖</strong><br>
+                <span style="color: #666; font-size: 0.9em;">每套试卷包含4个主要问题，部分问题包含多个子题，实际覆盖知识点更全面</span>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <div class="nav-links">
+                <a href="#capital-budgeting" class="nav-link">资本预算技术</a>
+                <a href="#bond-valuation" class="nav-link">债券估值</a>
+                <a href="#stock-valuation" class="nav-link">股票估值与资本成本</a>
+                <a href="#working-capital" class="nav-link">营运资本管理</a>
+                <a href="#personal-finance" class="nav-link">个人财务规划</a>
+            </div>
+        </div>
+
+        <!-- 资本预算技术 -->
+        <div id="capital-budgeting" class="section">
+            <div class="section-header">
+                💼 资本预算技术 (Capital Budgeting Techniques)
+            </div>
+            <table class="question-table">
+                <thead>
+                    <tr>
+                        <th class="question-cell">题目原文</th>
+                        <th class="knowledge-cell">知识点位置与描述</th>
+                        <th class="answer-cell">完整答案解析</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Set 5 问题一 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 5 - 问题一：卡斯托公司机器替换决策</div>
+                            <div class="question-content">
+                                卡斯托公司两年前以8万美元购入一台机器。购买时预计该机器使用寿命为5年，残值1万美元，采用直线法计提折旧。目前该机器可售得3.5万美元。财务经理正在评估购置一台使用寿命4年的新机器的可行性，相关预测现金流如下：
+                                <ul style="margin-top: 10px;">
+                                    <li>初始购置成本10万美元，另需安装费1万美元</li>
+                                    <li>年销售额将从4万美元提升至4.5万美元</li>
+                                    <li>年运营成本将从1.2万美元降至8千美元</li>
+                                    <li>净营运资本将增加1.2万美元</li>
+                                    <li>使用寿命结束时残值为零</li>
+                                </ul>
+                                公司资本成本为10%。
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算继续使用旧机器的净现值（NPV）（9分）<br>
+                                b) 计算购置新机器的初始投资额（4分）<br>
+                                c) 根据(b)计算结果，计算立即购置新机器的净现值（NPV）（10分）<br>
+                                d) 公司应继续使用旧机器还是立即购置新机器？为什么？（2分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 5 Capital Budgeting Techniques (Chp 11)</span>
+                            <div class="knowledge-point">
+                                <strong>资本预算技术 (Capital Budgeting Techniques)</strong><br><br>
+                                
+                                <strong>【核心定义】</strong><br>
+                                • 资本预算：评估和选择长期投资的过程，与企业所有者财富最大化目标一致<br>
+                                • 资本支出：企业预期在超过1年的时间内产生效益的资金支出<br><br>
+                                
+                                <strong>【现金流组成（三个主要组成部分）】</strong><br>
+                                • 初始投资：第0期项目的相关现金流出<br>
+                                • 营运现金流入：项目生命期内实施产生的增量税后现金流入<br>
+                                • 终值现金流：项目最后一年发生的税后非营运现金流<br><br>
+                                
+                                <strong>【初始投资计算公式】</strong><br>
+                                <div class="formula-box">
+                                初始投资 = 新资产安装成本 - 旧资产出售后税后收入 ± 净营运资本变化<br>
+                                其中：安装成本 = 新资产成本 + 安装费用
+                                </div>
+                                
+                                <strong>【重要概念】</strong><br>
+                                • 沉没成本：已经发生的现金支出，不影响当前决策的相关现金流<br>
+                                • 机会成本：拥有资产最佳替代用途的现金流，应作为现金流出包含<br>
+                                • 增量现金流：实施拟议资本支出预期产生的额外现金流<br><br>
+                                
+                                <strong>【营运现金流入计算】</strong><br>
+                                <div class="formula-box">
+                                税后营运现金流入 = 收入 - 费用（不含折旧和利息）<br>
+                                增量现金流入 = 新项目现金流入 - 现有项目现金流入
+                                </div>
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">基础信息分析：</div>
+                                • 旧机器原价：80,000美元，预计5年使用寿命，残值10,000美元<br>
+                                • 年折旧额 = (80,000 - 10,000) ÷ 5 = 14,000美元<br>
+                                • 已使用2年，账面价值 = 80,000 - (14,000 × 2) = 52,000美元<br>
+                                • 当前市场价值：35,000美元<br>
+                                • 剩余使用寿命：3年
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">a) 继续使用旧机器的净现值（NPV）</div>
+                                如果继续使用旧机器3年：<br>
+                                • 年销售额：40,000美元<br>
+                                • 年运营成本：12,000美元<br>
+                                • 年净现金流 = 40,000 - 12,000 = 28,000美元<br>
+                                • 第3年末残值：10,000美元<br>
+
+                                <div class="calculation">
+                                现金流时间线：<br>
+                                年份    0        1        2        3<br>
+                                现金流  -35,000  28,000   28,000   38,000<br>
+                                （注：年份0的-35,000代表放弃出售旧机器的机会成本）
+                                </div>
+
+                                <div class="calculation">
+                                使用现值公式计算各年现金流现值：<br>
+                                • 第1年现值 = 28,000 ÷ (1.10)¹ = 25,454.55美元<br>
+                                • 第2年现值 = 28,000 ÷ (1.10)² = 23,140.50美元<br>
+                                • 第3年现值 = 38,000 ÷ (1.10)³ = 28,549.36美元
+                                </div>
+
+                                <div class="result">
+                                继续使用旧机器的NPV = -35,000 + 25,454.55 + 23,140.50 + 28,549.36 = $42,144.41
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 购置新机器的初始投资额</div>
+                                初始投资额包括：<br>
+                                • 新机器购置成本：100,000美元<br>
+                                • 安装费：10,000美元<br>
+                                • 净营运资本增加：12,000美元<br>
+                                • 减去：旧机器出售收入：35,000美元<br>
+
+                                <div class="result">
+                                初始投资额 = 100,000 + 10,000 + 12,000 - 35,000 = $87,000
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">c) 购置新机器的净现值（NPV）</div>
+                                新机器4年现金流：<br>
+                                • 年销售额：45,000美元<br>
+                                • 年运营成本：8,000美元<br>
+                                • 年净现金流 = 45,000 - 8,000 = 37,000美元<br>
+                                • 第4年末回收净营运资本：12,000美元<br>
+
+                                <div class="calculation">
+                                现金流时间线：<br>
+                                年份    0        1        2        3        4<br>
+                                现金流  -87,000  37,000   37,000   37,000   49,000<br>
+                                （注：第4年现金流 = 37,000 + 12,000 = 49,000美元）
+                                </div>
+
+                                <div class="calculation">
+                                使用现值公式计算各年现金流现值：<br>
+                                • 第1年现值 = 37,000 ÷ (1.10)¹ = 33,636.36美元<br>
+                                • 第2年现值 = 37,000 ÷ (1.10)² = 30,578.51美元<br>
+                                • 第3年现值 = 37,000 ÷ (1.10)³ = 27,798.64美元<br>
+                                • 第4年现值 = 49,000 ÷ (1.10)⁴ = 33,488.49美元
+                                </div>
+
+                                <div class="result">
+                                购置新机器的NPV = -87,000 + 33,636.36 + 30,578.51 + 27,798.64 + 33,488.49 = $38,502.00
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">d) 投资决策建议</div>
+                                比较两个方案的NPV：<br>
+                                • 继续使用旧机器NPV：42,144.41美元<br>
+                                • 购置新机器NPV：38,502.00美元<br>
+
+                                <div class="result">
+                                建议：公司应继续使用旧机器<br>
+                                理由：继续使用旧机器的净现值（42,144.41美元）高于购置新机器的净现值（38,502.00美元），净现值差额为3,642.41美元。根据净现值法则，应选择NPV更高的方案，即继续使用旧机器能为公司创造更多价值。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 6 问题一 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 6 - 问题一：卷面拉面公司设备替换</div>
+                            <div class="question-content">
+                                卷面拉面私人有限公司是一家生产方便面的工厂。该公司已完成了一项耗资5,200美元的研究项目来改进其生产工艺。基于研究结果，现在正在考虑购买新机器来替换旧机器。<br><br>
+
+                                新机器总成本为290,000美元，并产生额外的安装费用10,000美元。旧机器现在可以售得51,000美元，但需要支付1,000美元的处置费。<br><br>
+
+                                下表显示了现有机器的现金收入和费用：
+                                <table class="table-data" style="margin-top: 10px;">
+                                    <tr><th>年份</th><th>现金收入</th><th>现金费用</th></tr>
+                                    <tr><td>1</td><td>300,000</td><td>200,000</td></tr>
+                                    <tr><td>2</td><td>400,000</td><td>320,000</td></tr>
+                                    <tr><td>3</td><td>500,000</td><td>440,000</td></tr>
+                                </table>
+                                公司资本成本为4%。
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a. 计算拟议机器的初始投资额。（4分）<br>
+                                b. 据估计新机器预期将使现金收入增加35%，费用增加10%。计算以下内容：<br>
+                                　i. 现有机器的营运现金流入。（3分）<br>
+                                　ii. 拟议新机器的营运现金流入。（3分）<br>
+                                　iii. 项目的增量现金流。（3分）<br>
+                                c. i. 计算拟议项目的净现值。（5分）<br>
+                                　ii. 公司应继续运营旧机器还是购买新机器？说明理由。（2分）<br>
+                                d. i. 解释什么是沉没成本及其与投资决策的相关性。（2分）<br>
+                                　ii. 从上述案例中识别一项沉没成本。（1分）<br>
+                                e. 如果项目的内部收益率（IRR）为9%，公司是否应仅基于IRR技术接受或拒绝该项目？说明理由。（2分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 5 Capital Budgeting Techniques (Chp 11)</span>
+                            <div class="knowledge-point">
+                                <strong>资本预算技术 (Capital Budgeting Techniques)</strong><br><br>
+                                
+                                <strong>【核心概念】</strong><br>
+                                • 资本预算：评估和选择长期投资的过程<br>
+                                • 增量现金流：项目实施后的额外现金流<br>
+                                • 净现值（NPV）：项目未来现金流的现值减去初始投资<br><br>
+                                
+                                <strong>【现金流计算方法】</strong><br>
+                                • 现金流入：销售收入等经营活动产生的现金收入<br>
+                                • 现金流出：经营费用、初始投资等现金支出<br>
+                                • 净现金流：现金流入减去现金流出<br><br>
+                                
+                                <strong>【净现值（NPV）计算公式】</strong><br>
+                                <div class="formula">NPV = Σ[CF<sub>t</sub>/(1+r)<sup>t</sup>] - 初始投资</div>
+                                其中：<span class="formula-inline">CF<sub>t</sub></span> = 第t期现金流，<span class="formula-inline">r</span> = 折现率<br><br>
+                                
+                                <strong>【沉没成本与机会成本】</strong><br>
+                                • 沉没成本：已发生的历史成本（如研发费用），不影响决策<br>
+                                • 机会成本：放弃最佳替代方案的成本，应计入现金流<br><br>
+                                
+                                <strong>【内部收益率（IRR）】</strong><br>
+                                • 定义：使NPV=0的折现率<br>
+                                • 决策准则：IRR > 资本成本时接受项目<br>
+                                <div class="formula">NPV = 0 = Σ[CF<sub>t</sub>/(1+IRR)<sup>t</sup>] - 初始投资</div>
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 拟议机器的初始投资额</div>
+                                根据初始投资计算公式：<br>
+                                初始投资 = 新资产成本 + 安装费用 - 旧资产出售净收入<br><br>
+
+                                计算过程：<br>
+                                • 新机器成本：290,000美元<br>
+                                • 安装费用：10,000美元<br>
+                                • 旧机器出售净收入：51,000 - 1,000 = 50,000美元<br>
+
+                                <div class="result">
+                                初始投资额 = 290,000 + 10,000 - 50,000 = $250,000
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 现金流计算</div>
+                                
+                                <strong>i. 现有机器的营运现金流入</strong>
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>现金收入</th><th>现金费用</th><th>净现金流</th></tr>
+                                    <tr><td>1</td><td>300,000</td><td>200,000</td><td>100,000</td></tr>
+                                    <tr><td>2</td><td>400,000</td><td>320,000</td><td>80,000</td></tr>
+                                    <tr><td>3</td><td>500,000</td><td>440,000</td><td>60,000</td></tr>
+                                </table>
+
+                                <strong>ii. 拟议新机器的营运现金流入</strong><br>
+                                新机器收入增加35%，费用增加10%：
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>现金收入</th><th>现金费用</th><th>净现金流</th></tr>
+                                    <tr><td>1</td><td>405,000</td><td>220,000</td><td>185,000</td></tr>
+                                    <tr><td>2</td><td>540,000</td><td>352,000</td><td>188,000</td></tr>
+                                    <tr><td>3</td><td>675,000</td><td>484,000</td><td>191,000</td></tr>
+                                </table>
+
+                                <div class="calculation">
+                                计算：<br>
+                                • 第1年：收入 = 300,000 × 1.35 = 405,000；费用 = 200,000 × 1.10 = 220,000<br>
+                                • 第2年：收入 = 400,000 × 1.35 = 540,000；费用 = 320,000 × 1.10 = 352,000<br>
+                                • 第3年：收入 = 500,000 × 1.35 = 675,000；费用 = 440,000 × 1.10 = 484,000
+                                </div>
+
+                                <strong>iii. 项目的增量现金流</strong>
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>新机器现金流</th><th>旧机器现金流</th><th>增量现金流</th></tr>
+                                    <tr><td>1</td><td>185,000</td><td>100,000</td><td>85,000</td></tr>
+                                    <tr><td>2</td><td>188,000</td><td>80,000</td><td>108,000</td></tr>
+                                    <tr><td>3</td><td>191,000</td><td>60,000</td><td>131,000</td></tr>
+                                </table>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">c) 净现值计算与决策</div>
+                                
+                                <strong>i. 拟议项目的净现值</strong><br>
+                                <div class="formula">NPV = -初始投资 + Σ(增量现金流 ÷ (1 + r)^t)</div>
+
+                                <div class="calculation">
+                                计算各年现值：<br>
+                                • 第1年现值 = 85,000 ÷ (1.04)¹ = 81,730.77美元<br>
+                                • 第2年现值 = 108,000 ÷ (1.04)² = 99,852.07美元<br>
+                                • 第3年现值 = 131,000 ÷ (1.04)³ = 116,512.35美元
+                                </div>
+
+                                <div class="result">
+                                NPV = -250,000 + 81,730.77 + 99,852.07 + 116,512.35 = $48,095.19
+                                </div>
+
+                                <strong>ii. 投资决策建议</strong><br>
+                                <div class="result">
+                                建议：公司应购买新机器<br>
+                                理由：项目NPV为正值48,095.19美元，表明该投资项目能为公司创造价值，超过了资本成本要求，因此应该接受该投资项目。
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">d) 沉没成本分析</div>
+                                
+                                <strong>i. 沉没成本定义及相关性</strong><br>
+                                沉没成本是指已经发生的、无法收回的历史成本，这些成本不应影响未来的投资决策。在投资决策中，应该忽略沉没成本，只考虑增量现金流。<br><br>
+
+                                <strong>ii. 案例中的沉没成本</strong><br>
+                                <div class="result">
+                                答案：5,200美元的研究项目费用<br>
+                                解释：这笔研究费用已经发生且无法收回，不管公司是否决定购买新机器，这个成本都已经产生，因此不应纳入投资决策的考虑范围。
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">e) IRR决策分析</div>
+                                <div class="result">
+                                答案：应该接受该项目<br>
+                                理由：项目IRR为9%，高于公司资本成本4%，根据IRR决策准则，当IRR > 资本成本时，应接受项目。同时，这与NPV分析结果一致（NPV > 0），两种方法都支持接受该投资项目。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 7 问题一 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 7 - 问题一：海豚果汁设备替换</div>
+                            <div class="question-content">
+                                海豚果汁公司正考虑购置一台新型果汁灌装设备以替换现有设备。新设备购置成本为35万美元，安装费用另需1万美元，使用寿命4年。若购入新设备，流动资产将增加4万美元，流动负债将增加2.5万美元，且在使用寿命结束时无残值。<br><br>
+
+                                现有灌装设备于3年前以30万美元购入，剩余使用寿命4年。该设备采用直线法计提折旧，当前可按8万美元价格出售，且无需承担任何拆卸清理费用。<br><br>
+
+                                新旧设备相关收入与费用（不含折旧与利息）如下表所示：
+                                <table class="table-data" style="margin-top: 10px;">
+                                    <tr><th>年份</th><th>新设备收入（美元）</th><th>新设备费用（美元）</th><th>旧设备收入（美元）</th><th>旧设备费用（美元）</th></tr>
+                                    <tr><td>1</td><td>1,100,000</td><td>60,000</td><td>1,000,000</td><td>95,000</td></tr>
+                                    <tr><td>2</td><td>1,100,000</td><td>64,000</td><td>900,000</td><td>95,000</td></tr>
+                                    <tr><td>3</td><td>1,100,000</td><td>70,000</td><td>820,000</td><td>95,000</td></tr>
+                                    <tr><td>4</td><td>1,100,000</td><td>74,000</td><td>750,000</td><td>95,000</td></tr>
+                                </table>
+                                公司资本成本为年利率10%。
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算海豚果汁公司继续使用旧设备的净现值（NPV）。（9分）<br>
+                                b) 确定购置新设备的初始投资额。（4分）<br>
+                                c) 根据(b)部分结果，计算海豚果汁公司购置新设备的净现值（NPV）。（10分）<br>
+                                d) 海豚果汁公司应继续使用旧设备还是购置新设备？说明理由。（2分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 5 Capital Budgeting Techniques (Chp 11)</span>
+                            <div class="knowledge-point">
+                                <strong>资本预算技术 (Capital Budgeting Techniques)</strong><br><br>
+                                
+                                <strong>【核心概念】</strong><br>
+                                • 资本预算：评估和选择长期投资的过程<br>
+                                • 增量现金流：项目实施后的额外现金流<br>
+                                • 净现值（NPV）：项目未来现金流的现值减去初始投资<br><br>
+                                
+                                <strong>【现金流计算方法】</strong><br>
+                                • 现金流入：销售收入等经营活动产生的现金收入<br>
+                                • 现金流出：经营费用、初始投资等现金支出<br>
+                                • 净现金流：现金流入减去现金流出<br><br>
+                                
+                                <strong>【净现值（NPV）计算公式】</strong><br>
+                                <div class="formula">NPV = Σ[CF<sub>t</sub>/(1+r)<sup>t</sup>] - 初始投资</div>
+                                其中：<span class="formula-inline">CF<sub>t</sub></span> = 第t期现金流，<span class="formula-inline">r</span> = 折现率<br><br>
+                                
+                                <strong>【沉没成本与机会成本】</strong><br>
+                                • 沉没成本：已发生的历史成本（如研发费用），不影响决策<br>
+                                • 机会成本：放弃最佳替代方案的成本，应计入现金流<br><br>
+                                
+                                <strong>【内部收益率（IRR）】</strong><br>
+                                • 定义：使NPV=0的折现率<br>
+                                • 决策准则：IRR > 资本成本时接受项目<br>
+                                <div class="formula">NPV = 0 = Σ[CF<sub>t</sub>/(1+IRR)<sup>t</sup>] - 初始投资</div>
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">基础信息分析：</div>
+                                • 旧设备：3年前以300,000美元购入，无残值，剩余4年使用寿命<br>
+                                • 新设备：购置成本350,000美元，安装费10,000美元，4年使用寿命，无残值<br>
+                                • 净营运资本变化：流动资产增加40,000美元，流动负债增加25,000美元<br>
+                                • 资本成本：10%
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">a) 继续使用旧设备的净现值（NPV）</div>
+                                继续使用旧设备的现金流分析：
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>收入（美元）</th><th>费用（美元）</th><th>净现金流（美元）</th></tr>
+                                    <tr><td>1</td><td>1,000,000</td><td>95,000</td><td>905,000</td></tr>
+                                    <tr><td>2</td><td>900,000</td><td>95,000</td><td>805,000</td></tr>
+                                    <tr><td>3</td><td>820,000</td><td>95,000</td><td>725,000</td></tr>
+                                    <tr><td>4</td><td>750,000</td><td>95,000</td><td>655,000</td></tr>
+                                </table>
+
+                                考虑机会成本（放弃出售旧设备的80,000美元）：<br>
+
+                                <div class="calculation">
+                                NPV计算：<br>
+                                • 第0年：-80,000美元（机会成本）<br>
+                                • 第1年现值 = 905,000 ÷ (1.10)¹ = 822,727.27美元<br>
+                                • 第2年现值 = 805,000 ÷ (1.10)² = 665,289.26美元<br>
+                                • 第3年现值 = 725,000 ÷ (1.10)³ = 544,473.93美元<br>
+                                • 第4年现值 = 655,000 ÷ (1.10)⁴ = 447,452.95美元
+                                </div>
+
+                                <div class="result">
+                                继续使用旧设备的NPV = -80,000 + 822,727.27 + 665,289.26 + 544,473.93 + 447,452.95 = $2,399,943.41
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 购置新设备的初始投资额</div>
+                                根据初始投资计算公式：<br>
+                                初始投资 = 新资产成本 + 安装费用 + 净营运资本变化 - 旧资产出售收入<br><br>
+
+                                计算过程：<br>
+                                • 新设备成本：350,000美元<br>
+                                • 安装费用：10,000美元<br>
+                                • 净营运资本变化：40,000 - 25,000 = 15,000美元<br>
+                                • 旧设备出售收入：80,000美元<br>
+
+                                <div class="result">
+                                初始投资额 = 350,000 + 10,000 + 15,000 - 80,000 = $295,000
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">c) 购置新设备的净现值（NPV）</div>
+                                新设备的现金流分析：
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>收入（美元）</th><th>费用（美元）</th><th>净现金流（美元）</th></tr>
+                                    <tr><td>1</td><td>1,100,000</td><td>60,000</td><td>1,040,000</td></tr>
+                                    <tr><td>2</td><td>1,100,000</td><td>64,000</td><td>1,036,000</td></tr>
+                                    <tr><td>3</td><td>1,100,000</td><td>70,000</td><td>1,030,000</td></tr>
+                                    <tr><td>4</td><td>1,100,000</td><td>74,000</td><td>1,026,000</td></tr>
+                                </table>
+
+                                第4年末回收净营运资本15,000美元：<br>
+                                第4年总现金流 = 1,026,000 + 15,000 = 1,041,000美元<br>
+
+                                <div class="calculation">
+                                NPV计算：<br>
+                                • 第0年：-295,000美元（初始投资）<br>
+                                • 第1年现值 = 1,040,000 ÷ (1.10)¹ = 945,454.55美元<br>
+                                • 第2年现值 = 1,036,000 ÷ (1.10)² = 856,198.35美元<br>
+                                • 第3年现值 = 1,030,000 ÷ (1.10)³ = 773,620.15美元<br>
+                                • 第4年现值 = 1,041,000 ÷ (1.10)⁴ = 711,277.24美元
+                                </div>
+
+                                <div class="result">
+                                购置新设备的NPV = -295,000 + 945,454.55 + 856,198.35 + 773,620.15 + 711,277.24 = $2,991,550.29
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">d) 投资决策建议</div>
+                                比较两个方案的NPV：<br>
+                                • 继续使用旧设备NPV：2,399,943.41美元<br>
+                                • 购置新设备NPV：2,991,550.29美元<br>
+
+                                <div class="result">
+                                建议：海豚果汁公司应购置新设备<br>
+                                理由：购置新设备的净现值（2,991,550.29美元）高于继续使用旧设备的净现值（2,399,943.41美元），净现值增加591,606.88美元。根据净现值法则，应选择NPV更高的方案，购置新设备能为公司创造更多价值。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 8 问题一 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 8 - 问题一：New-worn纺织设备替换</div>
+                            <div class="question-content">
+                                纺织品回收企业New-worn有限公司已运营20年，现考虑购置新设备替换旧设备。为评估新设备整合至现有生产流程的可行性，公司已支付6000美元委托专项研究。<br><br>
+
+                                新设备购置成本预计为340,000美元，另需10,000美元安装费。处置旧设备的税后净收益预计为45,000美元。流动资产将增加5,000美元，流动负债增加3,000美元。<br><br>
+
+                                现有设备未来四年的收支情况如下表所示（不含折旧与利息）：
+                                <table class="table-data" style="margin-top: 10px;">
+                                    <tr><th>年份</th><th>收入($)</th><th>支出($)</th></tr>
+                                    <tr><td>1</td><td>500,000</td><td>380,000</td></tr>
+                                    <tr><td>2</td><td>620,000</td><td>520,000</td></tr>
+                                    <tr><td>3</td><td>680,000</td><td>600,000</td></tr>
+                                    <tr><td>4</td><td>720,000</td><td>650,000</td></tr>
+                                </table>
+                                公司资本成本为年利率8%。
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算新设备采购的初始投资额（4分）<br>
+                                b) 预计新设备将使收入增长25%，支出增加10%。请计算：<br>
+                                　i. 现有设备的经营现金流入（4分）<br>
+                                　ii. 新设备的经营现金流入（4分）<br>
+                                　iii. 该项目的增量现金流（4分）<br>
+                                c) 计算该项目的净现值（NPV）（7分）<br>
+                                d) New-worn应购置新设备还是继续使用现有设备？说明理由（2分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 5 Capital Budgeting Techniques (Chp 11)</span>
+                            <span class="knowledge-tag">Topic 6 Working Capital Management (Chp 13)</span>
+                            <div class="knowledge-point">
+                                <strong>资本预算技术 (Capital Budgeting Techniques)</strong><br><br>
+                                
+                                <strong>【核心概念】</strong><br>
+                                • 资本预算：评估和选择长期投资的过程<br>
+                                • 增量现金流：项目实施后的额外现金流<br>
+                                • 净现值（NPV）：项目未来现金流的现值减去初始投资<br><br>
+                                
+                                <strong>【现金流计算方法】</strong><br>
+                                • 现金流入：销售收入等经营活动产生的现金收入<br>
+                                • 现金流出：经营费用、初始投资等现金支出<br>
+                                • 净现金流：现金流入减去现金流出<br><br>
+                                
+                                <strong>【净现值（NPV）计算公式】</strong><br>
+                                <div class="formula">NPV = Σ[CF<sub>t</sub>/(1+r)<sup>t</sup>] - 初始投资</div>
+                                其中：<span class="formula-inline">CF<sub>t</sub></span> = 第t期现金流，<span class="formula-inline">r</span> = 折现率<br><br>
+                                
+                                <strong>【沉没成本与机会成本】</strong><br>
+                                • 沉没成本：已发生的历史成本（如研发费用），不影响决策<br>
+                                • 机会成本：放弃最佳替代方案的成本，应计入现金流<br><br>
+                                
+                                <strong>【内部收益率（IRR）】</strong><br>
+                                • 定义：使NPV=0的折现率<br>
+                                • 决策准则：IRR > 资本成本时接受项目<br>
+                                <div class="formula">NPV = 0 = Σ[CF<sub>t</sub>/(1+IRR)<sup>t</sup>] - 初始投资</div>
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 新设备采购的初始投资额</div>
+                                根据初始投资计算公式：<br>
+                                初始投资 = 新资产成本 + 安装费用 + 净营运资本变化 - 旧资产出售净收益<br><br>
+
+                                计算过程：<br>
+                                • 新设备成本：340,000美元<br>
+                                • 安装费用：10,000美元<br>
+                                • 净营运资本变化：5,000 - 3,000 = 2,000美元<br>
+                                • 旧设备出售净收益：45,000美元<br>
+                                • 沉没成本（研究费用6,000美元）：已发生，不纳入计算<br>
+
+                                <div class="result">
+                                初始投资额 = 340,000 + 10,000 + 2,000 - 45,000 = $307,000
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 现金流分析</div>
+                                
+                                <strong>i. 现有设备的经营现金流入</strong>
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>收入（美元）</th><th>支出（美元）</th><th>净现金流（美元）</th></tr>
+                                    <tr><td>1</td><td>500,000</td><td>380,000</td><td>120,000</td></tr>
+                                    <tr><td>2</td><td>620,000</td><td>520,000</td><td>100,000</td></tr>
+                                    <tr><td>3</td><td>680,000</td><td>600,000</td><td>80,000</td></tr>
+                                    <tr><td>4</td><td>720,000</td><td>650,000</td><td>70,000</td></tr>
+                                </table>
+
+                                <strong>ii. 新设备的经营现金流入</strong><br>
+                                新设备收入增长25%，支出增加10%：
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>收入（美元）</th><th>支出（美元）</th><th>净现金流（美元）</th></tr>
+                                    <tr><td>1</td><td>625,000</td><td>418,000</td><td>207,000</td></tr>
+                                    <tr><td>2</td><td>775,000</td><td>572,000</td><td>203,000</td></tr>
+                                    <tr><td>3</td><td>850,000</td><td>660,000</td><td>190,000</td></tr>
+                                    <tr><td>4</td><td>900,000</td><td>715,000</td><td>185,000</td></tr>
+                                </table>
+
+                                <div class="calculation">
+                                计算详情：<br>
+                                • 第1年：收入 = 500,000 × 1.25 = 625,000；支出 = 380,000 × 1.10 = 418,000<br>
+                                • 第2年：收入 = 620,000 × 1.25 = 775,000；支出 = 520,000 × 1.10 = 572,000<br>
+                                • 第3年：收入 = 680,000 × 1.25 = 850,000；支出 = 600,000 × 1.10 = 660,000<br>
+                                • 第4年：收入 = 720,000 × 1.25 = 900,000；支出 = 650,000 × 1.10 = 715,000
+                                </div>
+
+                                <strong>iii. 该项目的增量现金流</strong>
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>新设备现金流</th><th>现有设备现金流</th><th>增量现金流</th></tr>
+                                    <tr><td>1</td><td>207,000</td><td>120,000</td><td>87,000</td></tr>
+                                    <tr><td>2</td><td>203,000</td><td>100,000</td><td>103,000</td></tr>
+                                    <tr><td>3</td><td>190,000</td><td>80,000</td><td>110,000</td></tr>
+                                    <tr><td>4</td><td>185,000</td><td>70,000</td><td>115,000</td></tr>
+                                </table>
+
+                                第4年末还需回收净营运资本2,000美元，所以第4年总增量现金流 = 115,000 + 2,000 = 117,000美元
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">c) 项目净现值（NPV）计算</div>
+                                <div class="formula">NPV = -初始投资 + Σ(增量现金流 ÷ (1 + r)^t)</div>
+
+                                <div class="calculation">
+                                计算各年现值：<br>
+                                • 第0年：-307,000美元（初始投资）<br>
+                                • 第1年现值 = 87,000 ÷ (1.08)¹ = 80,555.56美元<br>
+                                • 第2年现值 = 103,000 ÷ (1.08)² = 88,348.77美元<br>
+                                • 第3年现值 = 110,000 ÷ (1.08)³ = 87,350.23美元<br>
+                                • 第4年现值 = 117,000 ÷ (1.08)⁴ = 86,025.69美元
+                                </div>
+
+                                <div class="result">
+                                NPV = -307,000 + 80,555.56 + 88,348.77 + 87,350.23 + 86,025.69 = $35,280.25
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">d) 投资决策建议</div>
+                                <div class="result">
+                                建议：New-worn应购置新设备<br>
+                                理由：项目净现值为正值35,280.25美元，表明该投资项目能为公司创造价值，超过了8%的资本成本要求。根据净现值法则，应接受该投资项目。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 9 问题一 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 9 - 问题一：Happy-Muff松饼机器替换</div>
+                            <div class="question-content">
+                                Happy-Muff是一家每日向超市和便利店供应新鲜松饼的糖果公司。该公司正考虑扩展现有松饼口味系列。为此，Happy-Muff需为生产线购置一台新机器以替换现有设备。此前公司已支付10,000美元用于新口味系列的可行性市场调研。<br><br>
+
+                                新机器购置成本预计为250,000美元，另需14,000美元安装费用。处置现有设备的税后净收益预计为30,000美元。该交易将导致流动资产增加12,000美元，流动负债增加5,000美元。<br><br>
+
+                                现有机器未来四年的相关收支数据如下表所示（不含折旧与利息）：
+                                <table class="table-data" style="margin-top: 10px;">
+                                    <tr><th>年份</th><th>收入($)</th><th>支出($)</th></tr>
+                                    <tr><td>1</td><td>400,000</td><td>290,000</td></tr>
+                                    <tr><td>2</td><td>420,000</td><td>300,000</td></tr>
+                                    <tr><td>3</td><td>410,000</td><td>315,000</td></tr>
+                                    <tr><td>4</td><td>400,000</td><td>325,000</td></tr>
+                                </table>
+                                公司资本成本为年利率10%。
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算购置新机器的初始投资额（4分）<br>
+                                b) 据预测，新机器将使收入提升15%，支出增加10%。请计算：<br>
+                                　i. 现有机器的经营现金流入（4分）<br>
+                                　ii. 新机器的经营现金流入（4分）<br>
+                                　iii. 该项目的增量现金流（4分）<br>
+                                c) 计算该项目的净现值（NPV）（7分）<br>
+                                d) Happy-Muff应购置新机器还是继续使用现有设备？说明理由。（2分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 5 Capital Budgeting Techniques (Chp 11)</span>
+                            <span class="knowledge-tag">Topic 6 Working Capital Management (Chp 13)</span>
+                            <div class="knowledge-point">
+                                <strong>资本预算技术 (Capital Budgeting Techniques)</strong><br><br>
+                                
+                                <strong>【核心概念】</strong><br>
+                                • 资本预算：评估和选择长期投资的过程<br>
+                                • 增量现金流：项目实施后的额外现金流<br>
+                                • 净现值（NPV）：项目未来现金流的现值减去初始投资<br><br>
+                                
+                                <strong>【现金流计算方法】</strong><br>
+                                • 现金流入：销售收入等经营活动产生的现金收入<br>
+                                • 现金流出：经营费用、初始投资等现金支出<br>
+                                • 净现金流：现金流入减去现金流出<br><br>
+                                
+                                <strong>【净现值（NPV）计算公式】</strong><br>
+                                <div class="formula">NPV = Σ[CF<sub>t</sub>/(1+r)<sup>t</sup>] - 初始投资</div>
+                                其中：<span class="formula-inline">CF<sub>t</sub></span> = 第t期现金流，<span class="formula-inline">r</span> = 折现率<br><br>
+                                
+                                <strong>【沉没成本与机会成本】</strong><br>
+                                • 沉没成本：已发生的历史成本（如研发费用），不影响决策<br>
+                                • 机会成本：放弃最佳替代方案的成本，应计入现金流<br><br>
+                                
+                                <strong>【内部收益率（IRR）】</strong><br>
+                                • 定义：使NPV=0的折现率<br>
+                                • 决策准则：IRR > 资本成本时接受项目<br>
+                                <div class="formula">NPV = 0 = Σ[CF<sub>t</sub>/(1+IRR)<sup>t</sup>] - 初始投资</div>
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 购置新机器的初始投资额</div>
+                                根据初始投资计算公式：<br>
+                                初始投资 = 新资产成本 + 安装费用 + 净营运资本变化 - 旧资产出售净收益<br><br>
+
+                                计算过程：<br>
+                                • 新机器成本：250,000美元<br>
+                                • 安装费用：14,000美元<br>
+                                • 净营运资本变化：12,000 - 5,000 = 7,000美元<br>
+                                • 旧设备出售净收益：30,000美元<br>
+                                • 沉没成本（市场调研费用10,000美元）：已发生，不纳入计算<br>
+
+                                <div class="result">
+                                初始投资额 = 250,000 + 14,000 + 7,000 - 30,000 = $241,000
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 现金流分析</div>
+                                
+                                <strong>i. 现有机器的经营现金流入</strong>
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>收入（美元）</th><th>支出（美元）</th><th>净现金流（美元）</th></tr>
+                                    <tr><td>1</td><td>400,000</td><td>290,000</td><td>110,000</td></tr>
+                                    <tr><td>2</td><td>420,000</td><td>300,000</td><td>120,000</td></tr>
+                                    <tr><td>3</td><td>410,000</td><td>315,000</td><td>95,000</td></tr>
+                                    <tr><td>4</td><td>400,000</td><td>325,000</td><td>75,000</td></tr>
+                                </table>
+
+                                <strong>ii. 新机器的经营现金流入</strong><br>
+                                新机器收入提升15%，支出增加10%：
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>收入（美元）</th><th>支出（美元）</th><th>净现金流（美元）</th></tr>
+                                    <tr><td>1</td><td>460,000</td><td>319,000</td><td>141,000</td></tr>
+                                    <tr><td>2</td><td>483,000</td><td>330,000</td><td>153,000</td></tr>
+                                    <tr><td>3</td><td>471,500</td><td>346,500</td><td>125,000</td></tr>
+                                    <tr><td>4</td><td>460,000</td><td>357,500</td><td>102,500</td></tr>
+                                </table>
+
+                                <div class="calculation">
+                                计算详情：<br>
+                                • 第1年：收入 = 400,000 × 1.15 = 460,000；支出 = 290,000 × 1.10 = 319,000<br>
+                                • 第2年：收入 = 420,000 × 1.15 = 483,000；支出 = 300,000 × 1.10 = 330,000<br>
+                                • 第3年：收入 = 410,000 × 1.15 = 471,500；支出 = 315,000 × 1.10 = 346,500<br>
+                                • 第4年：收入 = 400,000 × 1.15 = 460,000；支出 = 325,000 × 1.10 = 357,500
+                                </div>
+
+                                <strong>iii. 该项目的增量现金流</strong>
+                                <table class="table-data">
+                                    <tr><th>年份</th><th>新机器现金流</th><th>现有机器现金流</th><th>增量现金流</th></tr>
+                                    <tr><td>1</td><td>141,000</td><td>110,000</td><td>31,000</td></tr>
+                                    <tr><td>2</td><td>153,000</td><td>120,000</td><td>33,000</td></tr>
+                                    <tr><td>3</td><td>125,000</td><td>95,000</td><td>30,000</td></tr>
+                                    <tr><td>4</td><td>102,500</td><td>75,000</td><td>27,500</td></tr>
+                                </table>
+
+                                第4年末还需回收净营运资本7,000美元，所以第4年总增量现金流 = 27,500 + 7,000 = 34,500美元
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">c) 项目净现值（NPV）计算</div>
+                                <div class="formula">NPV = -初始投资 + Σ(增量现金流 ÷ (1 + r)^t)</div>
+
+                                <div class="calculation">
+                                计算各年现值：<br>
+                                • 第0年：-241,000美元（初始投资）<br>
+                                • 第1年现值 = 31,000 ÷ (1.10)¹ = 28,181.82美元<br>
+                                • 第2年现值 = 33,000 ÷ (1.10)² = 27,272.73美元<br>
+                                • 第3年现值 = 30,000 ÷ (1.10)³ = 22,539.44美元<br>
+                                • 第4年现值 = 34,500 ÷ (1.10)⁴ = 23,566.95美元
+                                </div>
+
+                                <div class="result">
+                                NPV = -241,000 + 28,181.82 + 27,272.73 + 22,539.44 + 23,566.95 = -$139,439.06
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">d) 投资决策建议</div>
+                                <div class="result">
+                                建议：Happy-Muff应继续使用现有设备<br>
+                                理由：项目净现值为负值-139,439.06美元，表明该投资项目会减少公司价值，无法达到10%的资本成本要求。根据净现值法则，应拒绝该投资项目。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 债券估值 -->
+        <div id="bond-valuation" class="section">
+            <div class="section-header">
+                📊 债券估值 (Bond Valuation)
+            </div>
+            <table class="question-table">
+                <thead>
+                    <tr>
+                        <th class="question-cell">题目原文</th>
+                        <th class="knowledge-cell">知识点位置与描述</th>
+                        <th class="answer-cell">完整答案解析</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Set 5 问题二a -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 5 - 问题二a：达菲特公司债券与蜂巢超市债券</div>
+                            <div class="question-content">
+                                请根据以下数据估算债券价值：<br><br>
+
+                                <strong>达菲特公司（Daffitt）债券：</strong><br>
+                                • 面值：1000美元<br>
+                                • 票面利率：12%，年付息<br>
+                                • 到期期限：8年<br>
+                                • 要求收益率：10%<br><br>
+
+                                <strong>蜂巢超市（Beehive）债券：</strong><br>
+                                • 面值：1000美元<br>
+                                • 票面利率：10%，半年付息<br>
+                                • 到期期限：12年<br>
+                                • 要求收益率：8%
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                1. 计算达菲特公司债券的价值（5分）<br>
+                                2. 计算蜂巢超市债券的价值（5分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 6 Bond Valuation and Interest (Chp 6)</span>
+                            <div class="knowledge-point">
+                                <strong>债券估值与利率结构 (Bond Valuation and Interest Rates)</strong><br><br>
+                                
+                                <strong>【利率基础】</strong><br>
+                                • 利率：债务工具的融资成本，借款人向贷款人支付的补偿<br>
+                                • 要求收益率：权益工具的资金成本，销售所有权权益获得资金的成本<br>
+                                • 实际利率：无通胀、无风险、无流动性偏好的均衡利率<br><br>
+                                
+                                <strong>【名义利率计算公式】</strong><br>
+                                <div class="formula">名义利率 = 实际利率 + 通胀溢价 + 风险溢价</div>
+                                <div class="formula">r<sub>1</sub> = r* + IP + RP<sub>1</sub></div>
+                                其中：<span class="formula-inline">r*</span> = 实际利率，<span class="formula-inline">IP</span> = 通胀溢价，<span class="formula-inline">RP</span> = 风险溢价<br><br>
+                                
+                                <strong>【债券基本特征】</strong><br>
+                                • 票面利率：债券面值的年付息百分比<br>
+                                • 面值：债券到期时须偿还的本金金额<br>
+                                • 到期日：债券到期、必须偿还本金的时间<br><br>
+                                
+                                <strong>【债券估值基本模型】</strong><br>
+                                <div class="formula">B<sub>0</sub> = I × [Σ(1/(1+r<sub>d</sub>)<sup>t</sup>)] + M × [1/(1+r<sub>d</sub>)<sup>n</sup>]</div>
+                                其中：<span class="formula-inline">B<sub>0</sub></span> = 债券价值，<span class="formula-inline">I</span> = 年利息，<span class="formula-inline">M</span> = 面值，<span class="formula-inline">r<sub>d</sub></span> = 要求收益率，<span class="formula-inline">n</span> = 到期年数<br><br>
+                                
+                                <strong>【债券价格与收益率关系】</strong><br>
+                                • 折价债券：要求收益率 > 票面利率，债券价格 < 面值<br>
+                                • 溢价债券：要求收益率 < 票面利率，债券价格 > 面值<br>
+                                • 平价债券：要求收益率 = 票面利率，债券价格 = 面值<br><br>
+                                
+                                <strong>【利率风险】</strong><br>
+                                • 定义：利率变化对债券价值的影响<br>
+                                • 关系：到期期限越短，对利率变化的敏感性越低
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">1. 达菲特公司债券价值计算</div>
+                                <div class="formula">债券价值 = 利息年金现值 + 本金现值</div>
+                                <div class="formula">V = I × PVIFA(r,n) + M × PVIF(r,n)</div>
+
+                                给定数据：<br>
+                                • 面值(M) = 1000美元<br>
+                                • 年利息(I) = 1000 × 12% = 120美元<br>
+                                • 到期期限(n) = 8年<br>
+                                • 要求收益率(r) = 10%<br>
+
+                                <div class="calculation">
+                                年金现值系数计算：<br>
+                                PVIFA(10%, 8年) = [1 - (1.10)^-8] / 0.10 = 5.3349<br>
+                                
+                                现值系数计算：<br>
+                                PVIF(10%, 8年) = (1.10)^-8 = 0.4665
+                                </div>
+
+                                <div class="calculation">
+                                债券价值计算：<br>
+                                利息年金现值 = 120 × 5.3349 = 640.19美元<br>
+                                本金现值 = 1000 × 0.4665 = 466.51美元<br>
+                                债券价值 = 640.19 + 466.51 = 1106.70美元
+                                </div>
+
+                                <div class="result">
+                                达菲特公司债券价值 = $1,106.70
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">2. 蜂巢超市债券价值计算</div>
+                                由于该债券半年付息，需调整相关参数：<br>
+                                • 面值(M) = 1000美元<br>
+                                • 半年利息(I) = 1000 × 10% ÷ 2 = 50美元<br>
+                                • 付息次数(n) = 12年 × 2 = 24次<br>
+                                • 半年要求收益率(r) = 8% ÷ 2 = 4%<br>
+
+                                <div class="calculation">
+                                年金现值系数计算：<br>
+                                PVIFA(4%, 24期) = [1 - (1.04)^-24] / 0.04 = 15.2470<br>
+                                
+                                现值系数计算：<br>
+                                PVIF(4%, 24期) = (1.04)^-24 = 0.3901
+                                </div>
+
+                                <div class="calculation">
+                                债券价值计算：<br>
+                                利息年金现值 = 50 × 15.2470 = 762.35美元<br>
+                                本金现值 = 1000 × 0.3901 = 390.12美元<br>
+                                债券价值 = 762.35 + 390.12 = 1152.47美元
+                                </div>
+
+                                <div class="result">
+                                蜂巢超市债券价值 = $1,152.47
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 6 问题二a -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 6 - 问题二a：Costlow债券与Laitley债券</div>
+                            <div class="question-content">
+                                请根据以下债券数据计算债券价值：<br><br>
+
+                                <strong>Costlow债券：</strong><br>
+                                • 面值：1000美元<br>
+                                • 票面利率：14%，年付息<br>
+                                • 到期期限：6年<br>
+                                • 要求收益率：12%<br><br>
+
+                                <strong>Laitley债券：</strong><br>
+                                • 面值：1000美元<br>
+                                • 票面利率：8%，半年付息<br>
+                                • 到期期限：15年<br>
+                                • 要求收益率：10%
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                1. 计算Costlow债券的价值（5分）<br>
+                                2. 计算Laitley债券的价值（5分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 6 Bond Valuation and Interest (Chp 6)</span>
+                            <div class="knowledge-point">
+                                <strong>债券估值与利率结构 (Bond Valuation and Interest Rates)</strong><br><br>
+                                
+                                <strong>【债券估值核心】</strong><br>
+                                • 债券价值：未来现金流（利息+本金）的现值<br>
+                                • 现金流包括：定期利息支付 + 到期本金偿还<br><br>
+                                
+                                <strong>【债券估值公式】</strong><br>
+                                <div class="formula">债券价值 = Σ[利息/(1+折现率)<sup>t</sup>] + 面值/(1+折现率)<sup>n</sup></div>
+                                <div class="formula">B<sub>0</sub> = I × PVIFA(r<sub>d</sub>,n) + M × PVIF(r<sub>d</sub>,n)</div>
+                                
+                                <strong>【债券收益率计算】</strong><br>
+                                • 当期收益率：<span class="formula-inline">当期收益率 = 年利息 ÷ 当前市场价格</span><br>
+                                • 到期收益率(YTM)：使债券现值等于市场价格的折现率<br><br>
+                                
+                                <strong>【债券风险类型】</strong><br>
+                                • 信用风险：发行人违约风险<br>
+                                • 利率风险：市场利率变化对债券价格的影响<br>
+                                • 流动性风险：无法快速变现的风险<br><br>
+                                
+                                <strong>【债券评级】</strong><br>
+                                • 投资级：AAA, AA, A, BBB（标普）<br>
+                                • 投机级：BB, B, CCC, CC, C, D<br>
+                                • 评级机构：Moody's, S&P, Fitch<br><br>
+                                
+                                <strong>【利率期限结构】</strong><br>
+                                • 收益率曲线：不同期限债券收益率的图形表示<br>
+                                • 正常收益率曲线：长期利率 > 短期利率（向上倾斜）<br>
+                                • 倒挂收益率曲线：短期利率 > 长期利率（向下倾斜）
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">1. Costlow债券价值计算</div>
+                                <div class="formula">债券价值 = 利息年金现值 + 本金现值</div>
+
+                                给定数据：<br>
+                                • 面值(M) = 1000美元<br>
+                                • 年利息(I) = 1000 × 14% = 140美元<br>
+                                • 到期期限(n) = 6年<br>
+                                • 要求收益率(r) = 12%<br>
+
+                                <div class="calculation">
+                                年金现值系数计算：<br>
+                                PVIFA(12%, 6年) = [1 - (1.12)^-6] / 0.12 = 4.1114<br>
+                                
+                                现值系数计算：<br>
+                                PVIF(12%, 6年) = (1.12)^-6 = 0.5066
+                                </div>
+
+                                <div class="calculation">
+                                债券价值计算：<br>
+                                利息年金现值 = 140 × 4.1114 = 575.60美元<br>
+                                本金现值 = 1000 × 0.5066 = 506.63美元<br>
+                                债券价值 = 575.60 + 506.63 = 1082.23美元
+                                </div>
+
+                                <div class="result">
+                                Costlow债券价值 = $1,082.23
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">2. Laitley债券价值计算</div>
+                                由于该债券半年付息，需调整相关参数：<br>
+                                • 面值(M) = 1000美元<br>
+                                • 半年利息(I) = 1000 × 8% ÷ 2 = 40美元<br>
+                                • 付息次数(n) = 15年 × 2 = 30次<br>
+                                • 半年要求收益率(r) = 10% ÷ 2 = 5%<br>
+
+                                <div class="calculation">
+                                年金现值系数计算：<br>
+                                PVIFA(5%, 30期) = [1 - (1.05)^-30] / 0.05 = 15.3725<br>
+                                
+                                现值系数计算：<br>
+                                PVIF(5%, 30期) = (1.05)^-30 = 0.2314
+                                </div>
+
+                                <div class="calculation">
+                                债券价值计算：<br>
+                                利息年金现值 = 40 × 15.3725 = 614.90美元<br>
+                                本金现值 = 1000 × 0.2314 = 231.38美元<br>
+                                债券价值 = 614.90 + 231.38 = 846.28美元
+                                </div>
+
+                                <div class="result">
+                                Laitley债券价值 = $846.28
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 7 问题二a -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 7 - 问题二a：金球公司债券</div>
+                            <div class="question-content">
+                                金球公司准备发行一只面值为1000美元的债券。该债券票面利率为10%，年付息，距离到期日还有8年。债券的要求收益率为8%。
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                计算金球公司债券的价值（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 6 Bond Valuation and Interest (Chp 6)</span>
+                            <div class="knowledge-point">
+                                <strong>债券估值与利率结构 (Bond Valuation and Interest Rates)</strong><br><br>
+                                
+                                <strong>【债券估值核心】</strong><br>
+                                • 债券价值：未来现金流（利息+本金）的现值<br>
+                                • 现金流包括：定期利息支付 + 到期本金偿还<br><br>
+                                
+                                <strong>【债券估值公式】</strong><br>
+                                <div class="formula">债券价值 = Σ[利息/(1+折现率)<sup>t</sup>] + 面值/(1+折现率)<sup>n</sup></div>
+                                <div class="formula">V = I × PVIFA(r,n) + M × PVIF(r,n)</div>
+                                
+                                <strong>【债券收益率计算】</strong><br>
+                                • 当期收益率：<span class="formula-inline">当期收益率 = 年利息 ÷ 当前市场价格</span><br>
+                                • 到期收益率(YTM)：使债券现值等于市场价格的折现率<br><br>
+                                
+                                <strong>【债券风险类型】</strong><br>
+                                • 信用风险：发行人违约风险<br>
+                                • 利率风险：市场利率变化对债券价格的影响<br>
+                                • 流动性风险：无法快速变现的风险<br><br>
+                                
+                                <strong>【债券评级】</strong><br>
+                                • 投资级：AAA, AA, A, BBB（标普）<br>
+                                • 投机级：BB, B, CCC, CC, C, D<br>
+                                • 评级机构：Moody's, S&P, Fitch<br><br>
+                                
+                                <strong>【利率期限结构】</strong><br>
+                                • 收益率曲线：不同期限债券收益率的图形表示<br>
+                                • 正常收益率曲线：长期利率 > 短期利率（向上倾斜）<br>
+                                • 倒挂收益率曲线：短期利率 > 长期利率（向下倾斜）
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">金球公司债券价值计算</div>
+                                <div class="formula">债券价值 = 利息年金现值 + 本金现值</div>
+                                <div class="formula">V = I × PVIFA(r,n) + M × PVIF(r,n)</div>
+
+                                给定数据：<br>
+                                • 面值(M) = 1000美元<br>
+                                • 年利息(I) = 1000 × 10% = 100美元<br>
+                                • 到期期限(n) = 8年<br>
+                                • 要求收益率(r) = 8%<br>
+
+                                <div class="calculation">
+                                年金现值系数计算：<br>
+                                PVIFA(8%, 8年) = [1 - (1.08)^-8] / 0.08<br>
+                                = [1 - 0.5403] / 0.08<br>
+                                = 0.4597 / 0.08 = 5.7466
+                                </div>
+
+                                <div class="calculation">
+                                现值系数计算：<br>
+                                PVIF(8%, 8年) = (1.08)^-8 = 0.5403
+                                </div>
+
+                                <div class="calculation">
+                                债券价值计算：<br>
+                                利息年金现值 = 100 × 5.7466 = 574.66美元<br>
+                                本金现值 = 1000 × 0.5403 = 540.27美元<br>
+                                债券价值 = 574.66 + 540.27 = 1114.93美元
+                                </div>
+
+                                <div class="result">
+                                金球公司债券价值 = $1,114.93
+                                </div>
+
+                                <div class="answer-section">
+                                    <div class="answer-header">分析说明：</div>
+                                    由于该债券的票面利率（10%）高于要求收益率（8%），因此债券以溢价交易。债券价值（1114.93美元）高于面值（1000美元），溢价金额为114.93美元。这反映了市场对该债券相对较高票面利率的正面评价。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 8 问题二a -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 8 - 问题二a：Drex公司债券</div>
+                            <div class="question-content">
+                                Drex公司预计将发行一只面值为1000美元的债券。该债券票面利率为6%，半年付息，距离到期日还有10年。债券的要求收益率为8%。
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                计算Drex公司债券的价值（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 6 Bond Valuation and Interest (Chp 6)</span>
+                            <div class="knowledge-point">
+                                <strong>债券估值与利率结构 (Bond Valuation and Interest Rates)</strong><br><br>
+                                
+                                <strong>【债券估值核心】</strong><br>
+                                • 债券价值：未来现金流（利息+本金）的现值<br>
+                                • 现金流包括：定期利息支付 + 到期本金偿还<br><br>
+                                
+                                <strong>【债券估值公式】</strong><br>
+                                <div class="formula">债券价值 = Σ[利息/(1+折现率)<sup>t</sup>] + 面值/(1+折现率)<sup>n</sup></div>
+                                <div class="formula">B<sub>0</sub> = I × PVIFA(r<sub>d</sub>,n) + M × PVIF(r<sub>d</sub>,n)</div>
+                                
+                                <strong>【债券收益率计算】</strong><br>
+                                • 当期收益率：<span class="formula-inline">当期收益率 = 年利息 ÷ 当前市场价格</span><br>
+                                • 到期收益率(YTM)：使债券现值等于市场价格的折现率<br><br>
+                                
+                                <strong>【债券风险类型】</strong><br>
+                                • 信用风险：发行人违约风险<br>
+                                • 利率风险：市场利率变化对债券价格的影响<br>
+                                • 流动性风险：无法快速变现的风险<br><br>
+                                
+                                <strong>【债券评级】</strong><br>
+                                • 投资级：AAA, AA, A, BBB（标普）<br>
+                                • 投机级：BB, B, CCC, CC, C, D<br>
+                                • 评级机构：Moody's, S&P, Fitch<br><br>
+                                
+                                <strong>【利率期限结构】</strong><br>
+                                • 收益率曲线：不同期限债券收益率的图形表示<br>
+                                • 正常收益率曲线：长期利率 > 短期利率（向上倾斜）<br>
+                                • 倒挂收益率曲线：短期利率 > 长期利率（向下倾斜）
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">Drex公司债券价值计算</div>
+                                由于该债券半年付息，需调整相关参数：<br>
+                                • 面值(M) = 1000美元<br>
+                                • 半年利息(I) = 1000 × 6% ÷ 2 = 30美元<br>
+                                • 付息次数(n) = 10年 × 2 = 20次<br>
+                                • 半年要求收益率(r) = 8% ÷ 2 = 4%<br>
+
+                                <div class="formula">债券价值 = 利息年金现值 + 本金现值</div>
+                                <div class="formula">V = I × PVIFA(r,n) + M × PVIF(r,n)</div>
+
+                                <div class="calculation">
+                                年金现值系数计算：<br>
+                                PVIFA(4%, 20期) = [1 - (1.04)^-20] / 0.04<br>
+                                = [1 - 0.4564] / 0.04<br>
+                                = 0.5436 / 0.04 = 13.5903
+                                </div>
+
+                                <div class="calculation">
+                                现值系数计算：<br>
+                                PVIF(4%, 20期) = (1.04)^-20 = 0.4564
+                                </div>
+
+                                <div class="calculation">
+                                债券价值计算：<br>
+                                利息年金现值 = 30 × 13.5903 = 407.71美元<br>
+                                本金现值 = 1000 × 0.4564 = 456.39美元<br>
+                                债券价值 = 407.71 + 456.39 = 864.10美元
+                                </div>
+
+                                <div class="result">
+                                Drex公司债券价值 = $864.10
+                                </div>
+
+                                <div class="answer-section">
+                                    <div class="answer-header">分析说明：</div>
+                                    由于该债券的票面利率（6%）低于要求收益率（8%），因此债券以折价交易。债券价值（864.10美元）低于面值（1000美元），折价金额为135.90美元。这反映了市场对该债券相对较低票面利率的调整。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 9 问题二a -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 9 - 问题二a：AeroProp公司债券</div>
+                            <div class="question-content">
+                                AeroProp公司预计将发行一只面值为1000美元的债券。该债券票面利率为8%，年付息，距离到期日还有5年。债券的要求收益率为6%。
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                计算AeroProp公司债券的价值（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 6 Bond Valuation and Interest (Chp 6)</span>
+                            <div class="knowledge-point">
+                                <strong>债券估值与利率结构 (Bond Valuation and Interest Rates)</strong><br><br>
+                                
+                                <strong>【债券估值核心】</strong><br>
+                                • 债券价值：未来现金流（利息+本金）的现值<br>
+                                • 现金流包括：定期利息支付 + 到期本金偿还<br><br>
+                                
+                                <strong>【债券估值公式】</strong><br>
+                                <div class="formula">债券价值 = Σ[利息/(1+折现率)<sup>t</sup>] + 面值/(1+折现率)<sup>n</sup></div>
+                                <div class="formula">B<sub>0</sub> = I × PVIFA(r,n) + M × PVIF(r,n)</div>
+                                
+                                <strong>【债券收益率计算】</strong><br>
+                                • 当期收益率：<span class="formula-inline">当期收益率 = 年利息 ÷ 当前市场价格</span><br>
+                                • 到期收益率(YTM)：使债券现值等于市场价格的折现率<br><br>
+                                
+                                <strong>【债券风险类型】</strong><br>
+                                • 信用风险：发行人违约风险<br>
+                                • 利率风险：市场利率变化对债券价格的影响<br>
+                                • 流动性风险：无法快速变现的风险<br><br>
+                                
+                                <strong>【债券评级】</strong><br>
+                                • 投资级：AAA, AA, A, BBB（标普）<br>
+                                • 投机级：BB, B, CCC, CC, C, D<br>
+                                • 评级机构：Moody's, S&P, Fitch<br><br>
+                                
+                                <strong>【利率期限结构】</strong><br>
+                                • 收益率曲线：不同期限债券收益率的图形表示<br>
+                                • 正常收益率曲线：长期利率 > 短期利率（向上倾斜）<br>
+                                • 倒挂收益率曲线：短期利率 > 长期利率（向下倾斜）
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">AeroProp公司债券价值计算</div>
+                                <div class="formula">债券价值 = 利息年金现值 + 本金现值</div>
+                                <div class="formula">V = I × PVIFA(r,n) + M × PVIF(r,n)</div>
+
+                                给定数据：<br>
+                                • 面值(M) = 1000美元<br>
+                                • 年利息(I) = 1000 × 8% = 80美元<br>
+                                • 到期期限(n) = 5年<br>
+                                • 要求收益率(r) = 6%<br>
+
+                                <div class="calculation">
+                                年金现值系数计算：<br>
+                                PVIFA(6%, 5年) = [1 - (1.06)^-5] / 0.06<br>
+                                = [1 - 0.7473] / 0.06<br>
+                                = 0.2527 / 0.06 = 4.2124
+                                </div>
+
+                                <div class="calculation">
+                                现值系数计算：<br>
+                                PVIF(6%, 5年) = (1.06)^-5 = 0.7473
+                                </div>
+
+                                <div class="calculation">
+                                债券价值计算：<br>
+                                利息年金现值 = 80 × 4.2124 = 336.99美元<br>
+                                本金现值 = 1000 × 0.7473 = 747.26美元<br>
+                                债券价值 = 336.99 + 747.26 = 1084.25美元
+                                </div>
+
+                                <div class="result">
+                                AeroProp公司债券价值 = $1,084.25
+                                </div>
+
+                                <div class="answer-section">
+                                    <div class="answer-header">分析说明：</div>
+                                    由于该债券的票面利率（8%）高于要求收益率（6%），因此债券以溢价交易。债券价值（1084.25美元）高于面值（1000美元），溢价金额为84.25美元。这反映了投资者愿意为相对较高的票面利率支付溢价。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 股票估值与资本成本 -->
+        <div id="stock-valuation" class="section">
+            <div class="section-header">
+                📈 股票估值与资本成本 (Stock Valuation & Cost of Capital)
+            </div>
+            <table class="question-table">
+                <thead>
+                    <tr>
+                        <th class="question-cell">题目原文</th>
+                        <th class="knowledge-cell">知识点位置与描述</th>
+                        <th class="answer-cell">完整答案解析</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Set 5 问题二c,d -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 5 - 问题二c,d：津子工业股票估值与彩虹航空WACC</div>
+                            <div class="question-content">
+                                <strong>c) 津子工业（Tsunami）股票估值：</strong><br>
+                                津子工业刚发放了每股2美元的股利，该股利预计将永续增长4%。如果津子工业股票的要求收益率为14%，计算每股价值。（5分）<br><br>
+
+                                <strong>d) 彩虹航空（Rainbow Airways）资本成本：</strong><br>
+                                彩虹航空拥有以下资本结构：<br>
+                                • 长期债务：40%（税前成本12%）<br>
+                                • 普通股：60%（要求收益率16%）<br>
+                                • 企业所得税率：40%<br>
+                                计算彩虹航空的加权平均资本成本（WACC）。（5分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                c) 计算津子工业股票的每股价值（5分）<br>
+                                d) 计算彩虹航空的加权平均资本成本（5分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 7 Stock Valuation and Cost of Capital (Chp 7&9)</span>
+                            <div class="knowledge-point">
+                                <strong>股票估值与资本成本 (Stock Valuation and Cost of Capital)</strong><br><br>
+                                
+                                <strong>【普通股成本计算方法】</strong><br>
+                                
+                                <strong>1. 恒定增长模型法：</strong><br>
+                                <div class="formula">r<sub>s</sub> = (D<sub>1</sub>/P<sub>0</sub>) + g</div>
+                                <div class="formula-inline">= 股利收益率 + 资本利得收益率</div><br><br>
+                                
+                                <strong>2. 资本资产定价模型(CAPM)：</strong><br>
+                                <div class="formula">r<sub>s</sub> = R<sub>F</sub> + [β × (r<sub>m</sub> - R<sub>F</sub>)]</div>
+                                其中：<span class="formula-inline">R<sub>F</sub></span> = 无风险利率，<span class="formula-inline">β</span> = 贝塔系数，<span class="formula-inline">r<sub>m</sub></span> = 市场收益率<br><br>
+                                
+                                <strong>【优先股成本】</strong><br>
+                                <div class="formula">r<sub>p</sub> = D<sub>p</sub>/N<sub>p</sub></div>
+                                其中：<span class="formula-inline">D<sub>p</sub></span> = 优先股股利，<span class="formula-inline">N<sub>p</sub></span> = 优先股净价格<br><br>
+                                
+                                <strong>【债务成本】</strong><br>
+                                • 税前债务成本：按市场利率确定<br>
+                                • 税后债务成本：<span class="formula-inline">r<sub>d</sub> = 税前成本 × (1 - T)</span><br>
+                                • 原因：利息支付可税前扣除<br><br>
+                                
+                                <strong>【加权平均资本成本(WACC)】</strong><br>
+                                <div class="formula">WACC = (w<sub>d</sub> × r<sub>d</sub>) + (w<sub>p</sub> × r<sub>p</sub>) + (w<sub>s</sub> × r<sub>s</sub>)</div>
+                                其中：<br>
+                                <span class="formula-inline">w<sub>d</sub></span> = 债务权重，<span class="formula-inline">w<sub>p</sub></span> = 优先股权重，<span class="formula-inline">w<sub>s</sub></span> = 普通股权重<br>
+                                <span class="formula-inline">w<sub>d</sub> + w<sub>p</sub> + w<sub>s</sub> = 1.0</span><br><br>
+                                
+                                <strong>【股票类型】</strong><br>
+                                • 授权股份：公司章程允许发行的股份<br>
+                                • 已发行股份：已向投资者出售的股份<br>
+                                • 流通股份：投资者持有的已发行股份<br>
+                                • 库存股份：公司回购的已发行股份
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">c) 津子工业股票估值</div>
+                                <div class="formula">固定增长股利模型：P₀ = D₁ ÷ (r - g)</div>
+                                其中：<br>
+                                • P₀ = 当前股价<br>
+                                • D₁ = 下一年预期股利<br>
+                                • r = 要求收益率<br>
+                                • g = 股利增长率<br>
+
+                                给定数据：<br>
+                                • 当前股利(D₀) = 2美元<br>
+                                • 股利增长率(g) = 4%<br>
+                                • 要求收益率(r) = 14%<br>
+
+                                <div class="calculation">
+                                计算下一年股利：<br>
+                                D₁ = D₀ × (1 + g) = 2 × (1 + 0.04) = 2 × 1.04 = 2.08美元
+                                </div>
+
+                                <div class="calculation">
+                                计算股票价值：<br>
+                                P₀ = D₁ ÷ (r - g)<br>
+                                P₀ = 2.08 ÷ (0.14 - 0.04)<br>
+                                P₀ = 2.08 ÷ 0.10 = 20.80美元
+                                </div>
+
+                                <div class="result">
+                                津子工业股票每股价值 = $20.80
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">d) 彩虹航空WACC计算</div>
+                                <div class="formula">WACC = (E/V) × rE + (D/V) × rD × (1 - T)</div>
+                                其中：<br>
+                                • E/V = 权益比重<br>
+                                • D/V = 债务比重<br>
+                                • rE = 权益成本<br>
+                                • rD = 债务成本<br>
+                                • T = 税率<br>
+
+                                给定数据：<br>
+                                • 长期债务比重(D/V) = 40%<br>
+                                • 普通股比重(E/V) = 60%<br>
+                                • 债务税前成本(rD) = 12%<br>
+                                • 权益成本(rE) = 16%<br>
+                                • 企业所得税率(T) = 40%<br>
+
+                                <div class="calculation">
+                                计算债务税后成本：<br>
+                                债务税后成本 = rD × (1 - T) = 12% × (1 - 0.40) = 12% × 0.60 = 7.2%
+                                </div>
+
+                                <div class="calculation">
+                                计算WACC：<br>
+                                WACC = (E/V) × rE + (D/V) × rD × (1 - T)<br>
+                                WACC = 0.60 × 16% + 0.40 × 7.2%<br>
+                                WACC = 9.6% + 2.88% = 12.48%
+                                </div>
+
+                                <div class="result">
+                                彩虹航空的加权平均资本成本（WACC） = 12.48%
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 6 问题二b,c -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 6 - 问题二b,c：Sulley Mikey股票估值与企业资本成本</div>
+                            <div class="question-content">
+                                <strong>b) Sulley Mikey普通股估值：</strong><br>
+                                Sulley Mikey公司刚支付了每股3美元的股利。预计该股利在未来3年将以每年12%的速度增长，之后将以每年6%的速度永续增长。如果投资者要求的收益率为15%，计算Sulley Mikey普通股的价值。（5分）<br><br>
+
+                                <strong>c) 企业资本成本计算：</strong><br>
+                                一家企业拥有以下资本结构：<br>
+                                • 债券：40%（税前成本10%）<br>
+                                • 优先股：20%（股利率8%）<br>
+                                • 普通股：40%（要求收益率14%）<br>
+                                • 企业所得税率：25%<br>
+                                计算该企业的加权平均资本成本（WACC）。（5分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                b) 计算Sulley Mikey普通股的价值（5分）<br>
+                                c) 计算企业的加权平均资本成本（5分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 7 Stock Valuation and Cost of Capital (Chp 7&9)</span>
+                            <div class="knowledge-point">
+                                <strong>股票估值与资本成本 (Stock Valuation and Cost of Capital)</strong><br><br>
+                                
+                                <strong>【普通股成本计算方法】</strong><br>
+                                
+                                <strong>1. 恒定增长模型法：</strong><br>
+                                <div class="formula">r<sub>s</sub> = (D<sub>1</sub>/P<sub>0</sub>) + g</div>
+                                <div class="formula-inline">= 股利收益率 + 资本利得收益率</div><br><br>
+                                
+                                <strong>2. 资本资产定价模型(CAPM)：</strong><br>
+                                <div class="formula">r<sub>s</sub> = R<sub>F</sub> + [β × (r<sub>m</sub> - R<sub>F</sub>)]</div>
+                                其中：<span class="formula-inline">R<sub>F</sub></span> = 无风险利率，<span class="formula-inline">β</span> = 贝塔系数，<span class="formula-inline">r<sub>m</sub></span> = 市场收益率<br><br>
+                                
+                                <strong>【优先股成本】</strong><br>
+                                <div class="formula">r<sub>p</sub> = D<sub>p</sub>/N<sub>p</sub></div>
+                                其中：<span class="formula-inline">D<sub>p</sub></span> = 优先股股利，<span class="formula-inline">N<sub>p</sub></span> = 优先股净价格<br><br>
+                                
+                                <strong>【债务成本】</strong><br>
+                                • 税前债务成本：按市场利率确定<br>
+                                • 税后债务成本：<span class="formula-inline">r<sub>d</sub> = 税前成本 × (1 - T)</span><br>
+                                • 原因：利息支付可税前扣除<br><br>
+                                
+                                <strong>【加权平均资本成本(WACC)】</strong><br>
+                                <div class="formula">WACC = (w<sub>d</sub> × r<sub>d</sub>) + (w<sub>p</sub> × r<sub>p</sub>) + (w<sub>s</sub> × r<sub>s</sub>)</div>
+                                其中：<br>
+                                <span class="formula-inline">w<sub>d</sub></span> = 债务权重，<span class="formula-inline">w<sub>p</sub></span> = 优先股权重，<span class="formula-inline">w<sub>s</sub></span> = 普通股权重<br>
+                                <span class="formula-inline">w<sub>d</sub> + w<sub>p</sub> + w<sub>s</sub> = 1.0</span><br><br>
+                                
+                                <strong>【股票类型】</strong><br>
+                                • 授权股份：公司章程允许发行的股份<br>
+                                • 已发行股份：已向投资者出售的股份<br>
+                                • 流通股份：投资者持有的已发行股份<br>
+                                • 库存股份：公司回购的已发行股份
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">b) Sulley Mikey普通股估值（二阶段增长模型）</div>
+                                <div class="formula">P₀ = Σ(D₀×(1+g₁)ᵗ ÷ (1+r)ᵗ) + (P₃ ÷ (1+r)³)</div>
+
+                                给定数据：<br>
+                                • 当前股利(D₀) = 3美元<br>
+                                • 第一阶段增长率(g₁) = 12%（前3年）<br>
+                                • 第二阶段增长率(g₂) = 6%（第4年起）<br>
+                                • 要求收益率(r) = 15%<br>
+
+                                <div class="calculation">
+                                <strong>步骤1：计算前3年股利现值</strong><br>
+                                D₁ = 3 × 1.12 = 3.36美元，PV = 3.36 ÷ 1.15 = 2.92美元<br>
+                                D₂ = 3.36 × 1.12 = 3.76美元，PV = 3.76 ÷ (1.15)² = 2.84美元<br>
+                                D₃ = 3.76 × 1.12 = 4.21美元，PV = 4.21 ÷ (1.15)³ = 2.77美元<br>
+                                前3年股利现值合计 = 2.92 + 2.84 + 2.77 = 8.53美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>步骤2：计算第3年末股价</strong><br>
+                                D₄ = D₃ × (1 + g₂) = 4.21 × 1.06 = 4.46美元<br>
+                                P₃ = D₄ ÷ (r - g₂) = 4.46 ÷ (0.15 - 0.06) = 4.46 ÷ 0.09 = 49.56美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>步骤3：计算P₃的现值</strong><br>
+                                P₃的现值 = 49.56 ÷ (1.15)³ = 49.56 ÷ 1.5209 = 32.59美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>步骤4：计算股票总价值</strong><br>
+                                P₀ = 前3年股利现值 + P₃现值<br>
+                                P₀ = 8.53 + 32.59 = 41.12美元
+                                </div>
+
+                                <div class="result">
+                                Sulley Mikey普通股价值 = $41.12
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">c) 企业资本成本计算（含优先股）</div>
+                                <div class="formula">WACC = (E/V) × rE + (P/V) × rP + (D/V) × rD × (1 - T)</div>
+
+                                给定数据：<br>
+                                • 债券比重(D/V) = 40%，税前成本 = 10%<br>
+                                • 优先股比重(P/V) = 20%，股利率 = 8%<br>
+                                • 普通股比重(E/V) = 40%，要求收益率 = 14%<br>
+                                • 企业所得税率(T) = 25%<br>
+
+                                <div class="calculation">
+                                各种资本成本：<br>
+                                • 债务税后成本 = 10% × (1 - 0.25) = 7.5%<br>
+                                • 优先股成本 = 8%（优先股股利不可税前扣除）<br>
+                                • 普通股成本 = 14%
+                                </div>
+
+                                <div class="calculation">
+                                WACC计算：<br>
+                                WACC = 0.40 × 14% + 0.20 × 8% + 0.40 × 7.5%<br>
+                                WACC = 5.6% + 1.6% + 3.0% = 10.2%
+                                </div>
+
+                                <div class="result">
+                                企业的加权平均资本成本（WACC） = 10.2%
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 7 问题二b,c -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 7 - 问题二b,c：GoodApps股票估值与PrimMex资本成本</div>
+                            <div class="question-content">
+                                <strong>b) GoodApps普通股估值：</strong><br>
+                                GoodApps公司的普通股刚支付了每股1.50美元的股利。投资者预期该股利将以每年8%的速度永续增长。如果投资者要求的收益率为12%，计算GoodApps普通股的价值。（5分）<br><br>
+
+                                <strong>c) PrimMex资本成本计算：</strong><br>
+                                PrimMex公司拥有以下资本结构：<br>
+                                • 长期债务：50%（税前成本9%）<br>
+                                • 普通股：50%（要求收益率15%）<br>
+                                • 企业所得税率：30%<br>
+                                计算PrimMex公司的加权平均资本成本（WACC）。（5分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                b) 计算GoodApps普通股的价值（5分）<br>
+                                c) 计算PrimMex公司的加权平均资本成本（5分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 7 Stock Valuation and Cost of Capital (Chp 7&9)</span>
+                            <div class="knowledge-point">
+                                <strong>股票估值与资本成本 (Stock Valuation and Cost of Capital)</strong><br><br>
+                                
+                                <strong>【普通股成本计算方法】</strong><br>
+                                
+                                <strong>1. 恒定增长模型法：</strong><br>
+                                <div class="formula">r<sub>s</sub> = (D<sub>1</sub>/P<sub>0</sub>) + g</div>
+                                <div class="formula-inline">= 股利收益率 + 资本利得收益率</div><br><br>
+                                
+                                <strong>2. 资本资产定价模型(CAPM)：</strong><br>
+                                <div class="formula">r<sub>s</sub> = R<sub>F</sub> + [β × (r<sub>m</sub> - R<sub>F</sub>)]</div>
+                                其中：<span class="formula-inline">R<sub>F</sub></span> = 无风险利率，<span class="formula-inline">β</span> = 贝塔系数，<span class="formula-inline">r<sub>m</sub></span> = 市场收益率<br><br>
+                                
+                                <strong>【优先股成本】</strong><br>
+                                <div class="formula">r<sub>p</sub> = D<sub>p</sub>/N<sub>p</sub></div>
+                                其中：<span class="formula-inline">D<sub>p</sub></span> = 优先股股利，<span class="formula-inline">N<sub>p</sub></span> = 优先股净价格<br><br>
+                                
+                                <strong>【债务成本】</strong><br>
+                                • 税前债务成本：按市场利率确定<br>
+                                • 税后债务成本：<span class="formula-inline">r<sub>d</sub> = 税前成本 × (1 - T)</span><br>
+                                • 原因：利息支付可税前扣除<br><br>
+                                
+                                <strong>【加权平均资本成本(WACC)】</strong><br>
+                                <div class="formula">WACC = (w<sub>d</sub> × r<sub>d</sub>) + (w<sub>p</sub> × r<sub>p</sub>) + (w<sub>s</sub> × r<sub>s</sub>)</div>
+                                其中：<br>
+                                <span class="formula-inline">w<sub>d</sub></span> = 债务权重，<span class="formula-inline">w<sub>p</sub></span> = 优先股权重，<span class="formula-inline">w<sub>s</sub></span> = 普通股权重<br>
+                                <span class="formula-inline">w<sub>d</sub> + w<sub>p</sub> + w<sub>s</sub> = 1.0</span><br><br>
+                                
+                                <strong>【股票类型】</strong><br>
+                                • 授权股份：公司章程允许发行的股份<br>
+                                • 已发行股份：已向投资者出售的股份<br>
+                                • 流通股份：投资者持有的已发行股份<br>
+                                • 库存股份：公司回购的已发行股份
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">b) GoodApps普通股估值</div>
+                                <div class="formula">固定增长股利模型：P₀ = D₁ ÷ (r - g)</div>
+
+                                给定数据：<br>
+                                • 当前股利(D₀) = 1.50美元<br>
+                                • 股利增长率(g) = 8%<br>
+                                • 要求收益率(r) = 12%<br>
+
+                                <div class="calculation">
+                                计算下一年股利：<br>
+                                D₁ = D₀ × (1 + g) = 1.50 × (1 + 0.08) = 1.50 × 1.08 = 1.62美元
+                                </div>
+
+                                <div class="calculation">
+                                计算股票价值：<br>
+                                P₀ = D₁ ÷ (r - g)<br>
+                                P₀ = 1.62 ÷ (0.12 - 0.08)<br>
+                                P₀ = 1.62 ÷ 0.04 = 40.50美元
+                                </div>
+
+                                <div class="result">
+                                GoodApps普通股价值 = $40.50
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">c) PrimMex资本成本计算</div>
+                                <div class="formula">WACC = (E/V) × rE + (D/V) × rD × (1 - T)</div>
+
+                                给定数据：<br>
+                                • 长期债务比重(D/V) = 50%<br>
+                                • 普通股比重(E/V) = 50%<br>
+                                • 债务税前成本(rD) = 9%<br>
+                                • 权益成本(rE) = 15%<br>
+                                • 企业所得税率(T) = 30%<br>
+
+                                <div class="calculation">
+                                计算债务税后成本：<br>
+                                债务税后成本 = rD × (1 - T) = 9% × (1 - 0.30) = 9% × 0.70 = 6.3%
+                                </div>
+
+                                <div class="calculation">
+                                计算WACC：<br>
+                                WACC = (E/V) × rE + (D/V) × rD × (1 - T)<br>
+                                WACC = 0.50 × 15% + 0.50 × 6.3%<br>
+                                WACC = 7.5% + 3.15% = 10.65%
+                                </div>
+
+                                <div class="result">
+                                PrimMex公司的加权平均资本成本（WACC） = 10.65%
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 8 问题二b,c -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 8 - 问题二b,c：CuJi股票估值与TESB资本成本</div>
+                            <div class="question-content">
+                                <strong>b) CuJi普通股估值：</strong><br>
+                                CuJi公司的普通股刚支付了每股2.50美元的股利。投资者预期该股利将以每年5%的速度永续增长。如果投资者要求的收益率为10%，计算CuJi普通股的价值。（5分）<br><br>
+
+                                <strong>c) TESB资本成本计算：</strong><br>
+                                TESB公司拥有以下资本结构：<br>
+                                • 长期债务：30%（税前成本8%）<br>
+                                • 普通股：70%（要求收益率13%）<br>
+                                • 企业所得税率：20%<br>
+                                计算TESB公司的加权平均资本成本（WACC）。（5分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                b) 计算CuJi普通股的价值（5分）<br>
+                                c) 计算TESB公司的加权平均资本成本（5分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 7 Stock Valuation and Cost of Capital (Chp 7&9)</span>
+                            <div class="knowledge-point">
+                                <strong>股票估值与资本成本 (Stock Valuation and Cost of Capital)</strong><br><br>
+                                
+                                <strong>【普通股成本计算方法】</strong><br>
+                                
+                                <strong>1. 恒定增长模型法：</strong><br>
+                                <div class="formula">r<sub>s</sub> = (D<sub>1</sub>/P<sub>0</sub>) + g</div>
+                                <div class="formula-inline">= 股利收益率 + 资本利得收益率</div><br><br>
+                                
+                                <strong>2. 资本资产定价模型(CAPM)：</strong><br>
+                                <div class="formula">r<sub>s</sub> = R<sub>F</sub> + [β × (r<sub>m</sub> - R<sub>F</sub>)]</div>
+                                其中：<span class="formula-inline">R<sub>F</sub></span> = 无风险利率，<span class="formula-inline">β</span> = 贝塔系数，<span class="formula-inline">r<sub>m</sub></span> = 市场收益率<br><br>
+                                
+                                <strong>【优先股成本】</strong><br>
+                                <div class="formula">r<sub>p</sub> = D<sub>p</sub>/N<sub>p</sub></div>
+                                其中：<span class="formula-inline">D<sub>p</sub></span> = 优先股股利，<span class="formula-inline">N<sub>p</sub></span> = 优先股净价格<br><br>
+                                
+                                <strong>【债务成本】</strong><br>
+                                • 税前债务成本：按市场利率确定<br>
+                                • 税后债务成本：<span class="formula-inline">r<sub>d</sub> = 税前成本 × (1 - T)</span><br>
+                                • 原因：利息支付可税前扣除<br><br>
+                                
+                                <strong>【加权平均资本成本(WACC)】</strong><br>
+                                <div class="formula">WACC = (w<sub>d</sub> × r<sub>d</sub>) + (w<sub>p</sub> × r<sub>p</sub>) + (w<sub>s</sub> × r<sub>s</sub>)</div>
+                                其中：<br>
+                                <span class="formula-inline">w<sub>d</sub></span> = 债务权重，<span class="formula-inline">w<sub>p</sub></span> = 优先股权重，<span class="formula-inline">w<sub>s</sub></span> = 普通股权重<br>
+                                <span class="formula-inline">w<sub>d</sub> + w<sub>p</sub> + w<sub>s</sub> = 1.0</span><br><br>
+                                
+                                <strong>【股票类型】</strong><br>
+                                • 授权股份：公司章程允许发行的股份<br>
+                                • 已发行股份：已向投资者出售的股份<br>
+                                • 流通股份：投资者持有的已发行股份<br>
+                                • 库存股份：公司回购的已发行股份
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">b) CuJi普通股估值</div>
+                                <div class="formula">固定增长股利模型：P₀ = D₁ ÷ (r - g)</div>
+
+                                给定数据：<br>
+                                • 当前股利(D₀) = 2.50美元<br>
+                                • 股利增长率(g) = 5%<br>
+                                • 要求收益率(r) = 10%<br>
+
+                                <div class="calculation">
+                                计算下一年股利：<br>
+                                D₁ = D₀ × (1 + g) = 2.50 × (1 + 0.05) = 2.50 × 1.05 = 2.625美元
+                                </div>
+
+                                <div class="calculation">
+                                计算股票价值：<br>
+                                P₀ = D₁ ÷ (r - g)<br>
+                                P₀ = 2.625 ÷ (0.10 - 0.05)<br>
+                                P₀ = 2.625 ÷ 0.05 = 52.50美元
+                                </div>
+
+                                <div class="result">
+                                CuJi普通股价值 = $52.50
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">c) TESB资本成本计算</div>
+                                <div class="formula">WACC = (E/V) × rE + (D/V) × rD × (1 - T)</div>
+
+                                给定数据：<br>
+                                • 长期债务比重(D/V) = 30%<br>
+                                • 普通股比重(E/V) = 70%<br>
+                                • 债务税前成本(rD) = 8%<br>
+                                • 权益成本(rE) = 13%<br>
+                                • 企业所得税率(T) = 20%<br>
+
+                                <div class="calculation">
+                                计算债务税后成本：<br>
+                                债务税后成本 = rD × (1 - T) = 8% × (1 - 0.20) = 8% × 0.80 = 6.4%
+                                </div>
+
+                                <div class="calculation">
+                                计算WACC：<br>
+                                WACC = (E/V) × rE + (D/V) × rD × (1 - T)<br>
+                                WACC = 0.70 × 13% + 0.30 × 6.4%<br>
+                                WACC = 9.1% + 1.92% = 11.02%
+                                </div>
+
+                                <div class="result">
+                                TESB公司的加权平均资本成本（WACC） = 11.02%
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 9 问题二b,c -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 9 - 问题二b,c：Ultima Networks股票估值与HAAT资本成本</div>
+                            <div class="question-content">
+                                <strong>b) Ultima Networks普通股估值：</strong><br>
+                                Ultima Networks公司的普通股刚支付了每股4美元的股利。投资者预期该股利将以每年3%的速度永续增长。如果投资者要求的收益率为9%，计算Ultima Networks普通股的价值。（5分）<br><br>
+
+                                <strong>c) HAAT资本成本计算：</strong><br>
+                                HAAT公司拥有以下资本结构：<br>
+                                • 长期债务：60%（税前成本7%）<br>
+                                • 普通股：40%（要求收益率12%）<br>
+                                • 企业所得税率：35%<br>
+                                计算HAAT公司的加权平均资本成本（WACC）。（5分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                b) 计算Ultima Networks普通股的价值（5分）<br>
+                                c) 计算HAAT公司的加权平均资本成本（5分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 7 Stock Valuation and Cost of Capital (Chp 7&9)</span>
+                            <div class="knowledge-point">
+                                <strong>股票估值与资本成本 (Stock Valuation and Cost of Capital)</strong><br><br>
+                                
+                                <strong>【普通股成本计算方法】</strong><br>
+                                
+                                <strong>1. 恒定增长模型法：</strong><br>
+                                <div class="formula">r<sub>s</sub> = (D<sub>1</sub>/P<sub>0</sub>) + g</div>
+                                <div class="formula-inline">= 股利收益率 + 资本利得收益率</div><br><br>
+                                
+                                <strong>2. 资本资产定价模型(CAPM)：</strong><br>
+                                <div class="formula">r<sub>s</sub> = R<sub>F</sub> + [β × (r<sub>m</sub> - R<sub>F</sub>)]</div>
+                                其中：<span class="formula-inline">R<sub>F</sub></span> = 无风险利率，<span class="formula-inline">β</span> = 贝塔系数，<span class="formula-inline">r<sub>m</sub></span> = 市场收益率<br><br>
+                                
+                                <strong>【优先股成本】</strong><br>
+                                <div class="formula">r<sub>p</sub> = D<sub>p</sub>/N<sub>p</sub></div>
+                                其中：<span class="formula-inline">D<sub>p</sub></span> = 优先股股利，<span class="formula-inline">N<sub>p</sub></span> = 优先股净价格<br><br>
+                                
+                                <strong>【债务成本】</strong><br>
+                                • 税前债务成本：按市场利率确定<br>
+                                • 税后债务成本：<span class="formula-inline">r<sub>d</sub> = 税前成本 × (1 - T)</span><br>
+                                • 原因：利息支付可税前扣除<br><br>
+                                
+                                <strong>【加权平均资本成本(WACC)】</strong><br>
+                                <div class="formula">WACC = (w<sub>d</sub> × r<sub>d</sub>) + (w<sub>p</sub> × r<sub>p</sub>) + (w<sub>s</sub> × r<sub>s</sub>)</div>
+                                其中：<br>
+                                <span class="formula-inline">w<sub>d</sub></span> = 债务权重，<span class="formula-inline">w<sub>p</sub></span> = 优先股权重，<span class="formula-inline">w<sub>s</sub></span> = 普通股权重<br>
+                                <span class="formula-inline">w<sub>d</sub> + w<sub>p</sub> + w<sub>s</sub> = 1.0</span><br><br>
+                                
+                                <strong>【股票类型】</strong><br>
+                                • 授权股份：公司章程允许发行的股份<br>
+                                • 已发行股份：已向投资者出售的股份<br>
+                                • 流通股份：投资者持有的已发行股份<br>
+                                • 库存股份：公司回购的已发行股份
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">b) Ultima Networks普通股估值</div>
+                                <div class="formula">固定增长股利模型：P₀ = D₁ ÷ (r - g)</div>
+
+                                给定数据：<br>
+                                • 当前股利(D₀) = 4美元<br>
+                                • 股利增长率(g) = 3%<br>
+                                • 要求收益率(r) = 9%<br>
+
+                                <div class="calculation">
+                                计算下一年股利：<br>
+                                D₁ = D₀ × (1 + g) = 4 × (1 + 0.03) = 4 × 1.03 = 4.12美元
+                                </div>
+
+                                <div class="calculation">
+                                计算股票价值：<br>
+                                P₀ = D₁ ÷ (r - g)<br>
+                                P₀ = 4.12 ÷ (0.09 - 0.03)<br>
+                                P₀ = 4.12 ÷ 0.06 = 68.67美元
+                                </div>
+
+                                <div class="result">
+                                Ultima Networks普通股价值 = $68.67
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">c) HAAT资本成本计算</div>
+                                <div class="formula">WACC = (E/V) × rE + (D/V) × rD × (1 - T)</div>
+
+                                给定数据：<br>
+                                • 长期债务比重(D/V) = 60%<br>
+                                • 普通股比重(E/V) = 40%<br>
+                                • 债务税前成本(rD) = 7%<br>
+                                • 权益成本(rE) = 12%<br>
+                                • 企业所得税率(T) = 35%<br>
+
+                                <div class="calculation">
+                                计算债务税后成本：<br>
+                                债务税后成本 = rD × (1 - T) = 7% × (1 - 0.35) = 7% × 0.65 = 4.55%
+                                </div>
+
+                                <div class="calculation">
+                                计算WACC：<br>
+                                WACC = (E/V) × rE + (D/V) × rD × (1 - T)<br>
+                                WACC = 0.40 × 12% + 0.60 × 4.55%<br>
+                                WACC = 4.8% + 2.73% = 7.53%
+                                </div>
+
+                                <div class="result">
+                                HAAT公司的加权平均资本成本（WACC） = 7.53%
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 营运资本管理 -->
+        <div id="working-capital" class="section">
+            <div class="section-header">
+                💰 营运资本管理 (Working Capital Management)
+            </div>
+            <table class="question-table">
+                <thead>
+                    <tr>
+                        <th class="question-cell">题目原文</th>
+                        <th class="knowledge-cell">知识点位置与描述</th>
+                        <th class="answer-cell">完整答案解析</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Set 5 问题三 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 5 - 问题三：现金转换周期与EOQ模型</div>
+                            <div class="question-content">
+                                <strong>a) 现金转换周期计算：</strong><br>
+                                根据以下数据计算现金转换周期（CCC）：<br>
+                                • 年销售额：500,000美元<br>
+                                • 年销货成本：350,000美元<br>
+                                • 应收账款：80,000美元<br>
+                                • 存货：60,000美元<br>
+                                • 应付账款：50,000美元（10分）<br><br>
+
+                                <strong>b) 经济订货批量（EOQ）：</strong><br>
+                                一家公司年需求量为10,000单位，每次订货成本为25美元，年存货持有成本为每单位2美元。计算：<br>
+                                i. 经济订货批量（EOQ）（5分）<br>
+                                ii. 年总成本（5分）<br>
+                                iii. 年订货次数（5分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算现金转换周期（10分）<br>
+                                b) 计算EOQ相关指标（15分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 8 Working Capital Management (Chp 15&16)</span>
+                            <div class="knowledge-point">
+                                <strong>营运资本管理 (Working Capital Management)</strong><br><br>
+                                
+                                <strong>【营运资本基础】</strong><br>
+                                • 营运资本：流动资产（存货、应收账款、有价证券、现金）<br>
+                                • 净营运资本：流动资产 - 流动负债<br>
+                                • 短期财务管理：管理流动资产和流动负债<br><br>
+                                
+                                <strong>【现金转换周期(CCC)】</strong><br>
+                                <div class="formula">CCC = AAI + ACP - APP</div>
+                                其中：<br>
+                                • <span class="formula-inline">AAI</span> = 平均存货周转期<br>
+                                • <span class="formula-inline">ACP</span> = 平均收账期<br>
+                                • <span class="formula-inline">APP</span> = 平均付款期<br><br>
+                                
+                                <strong>【经济订货量(EOQ)模型】</strong><br>
+                                <div class="formula">EOQ = √(2×S×O/C)</div>
+                                其中：<br>
+                                • <span class="formula-inline">S</span> = 年使用量，<span class="formula-inline">O</span> = 每次订货成本，<span class="formula-inline">C</span> = 单位年持有成本<br>
+                                • 订货成本：<span class="formula-inline">O × (S/Q)</span><br>
+                                • 持有成本：<span class="formula-inline">C × (Q/2)</span><br>
+                                • 再订货点 = 前置时间需求量 + 安全库存<br><br>
+                                
+                                <strong>【应付账款管理】</strong><br>
+                                • 放弃现金折扣的成本公式：<br>
+                                <div class="formula">成本 = [CD/(100%-CD)] × [365/N]</div>
+                                其中：<span class="formula-inline">CD</span> = 现金折扣百分比，<span class="formula-inline">N</span> = 延迟付款天数<br><br>
+                                
+                                <strong>【短期融资来源】</strong><br>
+                                • 无担保：银行贷款、商业票据<br>
+                                • 有担保：应收账款抵押、存货抵押<br>
+                                • 自然产生：应付账款、应计费用
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 现金转换周期（CCC）计算</div>
+                                <div class="formula">CCC = AAI + ACP - APP</div>
+                                其中：<br>
+                                • AAI = 平均存货周转期<br>
+                                • ACP = 平均收账期<br>
+                                • APP = 平均付款期<br>
+
+                                <div class="calculation">
+                                <strong>步骤1：计算平均存货周转期（AAI）</strong><br>
+                                AAI = (平均存货 ÷ 年销货成本) × 365天<br>
+                                AAI = (60,000 ÷ 350,000) × 365 = 62.57天
+                                </div>
+
+                                <div class="calculation">
+                                <strong>步骤2：计算平均收账期（ACP）</strong><br>
+                                ACP = (平均应收账款 ÷ 年销售额) × 365天<br>
+                                ACP = (80,000 ÷ 500,000) × 365 = 58.40天
+                                </div>
+
+                                <div class="calculation">
+                                <strong>步骤3：计算平均付款期（APP）</strong><br>
+                                APP = (平均应付账款 ÷ 年销货成本) × 365天<br>
+                                APP = (50,000 ÷ 350,000) × 365 = 52.14天
+                                </div>
+
+                                <div class="calculation">
+                                <strong>步骤4：计算现金转换周期</strong><br>
+                                CCC = AAI + ACP - APP<br>
+                                CCC = 62.57 + 58.40 - 52.14 = 68.83天
+                                </div>
+
+                                <div class="result">
+                                现金转换周期（CCC） = 68.83天
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 经济订货批量（EOQ）分析</div>
+                                
+                                <strong>i. 经济订货批量（EOQ）计算</strong><br>
+                                <div class="formula">EOQ = √(2DS/H)</div>
+                                其中：<br>
+                                • D = 年需求量<br>
+                                • S = 每次订货成本<br>
+                                • H = 年存货持有成本<br>
+
+                                给定数据：<br>
+                                • 年需求量(D) = 10,000单位<br>
+                                • 每次订货成本(S) = 25美元<br>
+                                • 年存货持有成本(H) = 2美元/单位<br>
+
+                                <div class="calculation">
+                                EOQ = √(2 × 10,000 × 25 ÷ 2)<br>
+                                EOQ = √(500,000 ÷ 2)<br>
+                                EOQ = √250,000 = 500单位
+                                </div>
+
+                                <div class="result">
+                                经济订货批量（EOQ） = 500单位
+                                </div>
+
+                                <strong>ii. 年总成本计算</strong><br>
+                                <div class="formula">年总成本 = 年订货成本 + 年持有成本</div>
+
+                                <div class="calculation">
+                                年订货成本 = (D ÷ EOQ) × S = (10,000 ÷ 500) × 25 = 20 × 25 = 500美元<br>
+                                年持有成本 = (EOQ ÷ 2) × H = (500 ÷ 2) × 2 = 250 × 2 = 500美元<br>
+                                年总成本 = 500 + 500 = 1,000美元
+                                </div>
+
+                                <div class="result">
+                                年总成本 = $1,000
+                                </div>
+
+                                <strong>iii. 年订货次数计算</strong><br>
+                                <div class="calculation">
+                                年订货次数 = D ÷ EOQ = 10,000 ÷ 500 = 20次
+                                </div>
+
+                                <div class="result">
+                                年订货次数 = 20次
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 6 问题三 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 6 - 问题三：应收账款管理与信用分析</div>
+                            <div class="question-content">
+                                <strong>a) 信用政策变更分析：</strong><br>
+                                一家公司正考虑放宽信用政策。当前信用政策下：<br>
+                                • 年销售额：100,000美元<br>
+                                • 平均收账期：30天<br>
+                                • 坏账损失率：2%<br><br>
+
+                                新信用政策下：<br>
+                                • 年销售额：120,000美元<br>
+                                • 平均收账期：45天<br>
+                                • 坏账损失率：4%<br>
+                                • 资本成本：12%<br>
+                                计算净收益变化。（15分）<br><br>
+
+                                <strong>b) 现金折扣政策：</strong><br>
+                                一家公司考虑提供"2/10, net 30"的信用条件。预计60%的客户会利用现金折扣。如果年销售额为200,000美元，计算现金折扣成本。（10分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 分析信用政策变更的净收益（15分）<br>
+                                b) 计算现金折扣成本（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 8 Working Capital Management (Chp 15&16)</span>
+                            <div class="knowledge-point">
+                                <strong>营运资本管理 (Working Capital Management)</strong><br><br>
+                                
+                                <strong>【现金转换周期概念】</strong><br>
+                                • 定义：企业将投资于经营的现金转换为经营收到现金的时间长度<br>
+                                • 计算：<span class="formula-inline">CCC = 经营周期 - 平均付款期</span><br>
+                                • 经营周期：<span class="formula-inline">经营周期 = 平均存货期 + 平均收账期</span><br><br>
+                                
+                                <strong>【现金转换周期计算】</strong><br>
+                                • 平均存货期(AAI)：<span class="formula-inline">AAI = (平均存货/销货成本) × 365</span><br>
+                                • 平均收账期(ACP)：<span class="formula-inline">ACP = (平均应收账款/销售收入) × 365</span><br>
+                                • 平均付款期(APP)：<span class="formula-inline">APP = (平均应付账款/采购成本) × 365</span><br><br>
+                                
+                                <strong>【EOQ模型应用】</strong><br>
+                                • 总成本：<span class="formula-inline">总成本 = 订货成本 + 持有成本</span><br>
+                                • 最优订货量：使总成本最小的订货量<br>
+                                • 假设：需求恒定、前置时间确定、不允许缺货<br><br>
+                                
+                                <strong>【信用条件分析】</strong><br>
+                                • 信用条件格式：a/b net c（如2/10 net 30）<br>
+                                • a = 现金折扣百分比<br>
+                                • b = 折扣期天数<br>
+                                • c = 信用期天数<br><br>
+                                
+                                <strong>【营运资本管理策略】</strong><br>
+                                • 缩短现金转换周期<br>
+                                • 加快存货周转<br>
+                                • 加快应收账款回收<br>
+                                • 延缓应付账款支付（在不损害信用的前提下）
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 信用政策变更分析</div>
+                                
+                                <strong>当前政策下的相关数据：</strong><br>
+                                • 年销售额：100,000美元<br>
+                                • 平均收账期：30天<br>
+                                • 坏账损失：100,000 × 2% = 2,000美元<br>
+                                • 应收账款投资：(100,000 ÷ 365) × 30 = 8,219美元<br><br>
+
+                                <strong>新政策下的相关数据：</strong><br>
+                                • 年销售额：120,000美元<br>
+                                • 平均收账期：45天<br>
+                                • 坏账损失：120,000 × 4% = 4,800美元<br>
+                                • 应收账款投资：(120,000 ÷ 365) × 45 = 14,795美元
+
+                                <div class="calculation">
+                                <strong>增量分析：</strong><br>
+                                增量销售额 = 120,000 - 100,000 = 20,000美元<br>
+                                增量坏账损失 = 4,800 - 2,000 = 2,800美元<br>
+                                增量应收账款投资 = 14,795 - 8,219 = 6,576美元<br>
+                                增量应收账款投资的机会成本 = 6,576 × 12% = 789美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>净收益计算：</strong><br>
+                                增量收益：<br>
+                                • 增量销售额：20,000美元<br>
+                                
+                                增量成本：<br>
+                                • 增量坏账损失：2,800美元<br>
+                                • 增量机会成本：789美元<br>
+                                • 总增量成本：3,589美元
+                                </div>
+
+                                <div class="result">
+                                净收益变化 = 20,000 - 3,589 = $16,411（增加）<br>
+                                建议：应该采用新的信用政策，因为能带来16,411美元的净收益增加。
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 现金折扣成本计算</div>
+                                
+                                信用条件："2/10, net 30"<br>
+                                • 折扣率：2%<br>
+                                • 折扣期：10天<br>
+                                • 信用期：30天<br>
+                                • 利用折扣的客户比例：60%<br>
+                                • 年销售额：200,000美元
+
+                                <div class="calculation">
+                                利用现金折扣的销售额：<br>
+                                200,000 × 60% = 120,000美元
+                                </div>
+
+                                <div class="calculation">
+                                现金折扣成本：<br>
+                                = 利用折扣的销售额 × 折扣率<br>
+                                = 120,000 × 2%<br>
+                                = 2,400美元
+                                </div>
+
+                                <div class="result">
+                                年现金折扣成本 = $2,400
+                                </div>
+
+                                <div class="answer-section">
+                                    <div class="answer-header">补充分析：</div>
+                                    现金折扣的年化成本率为：<br>
+                                    [2% ÷ (100% - 2%)] × [365 ÷ (30 - 10)] = 37.24%<br>
+                                    这表明现金折扣政策的隐含年利率很高，企业需要权衡加速回款的收益与折扣成本。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 7 问题三 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 7 - 问题三：营运资本需求与短期融资</div>
+                            <div class="question-content">
+                                <strong>a) 营运资本需求预测：</strong><br>
+                                一家公司预计明年的财务数据如下：<br>
+                                • 销售额：800,000美元<br>
+                                • 销货成本：销售额的70%<br>
+                                • 应收账款周转期：40天<br>
+                                • 存货周转期：50天<br>
+                                • 应付账款周转期：35天<br>
+                                计算所需的营运资本投资。（15分）<br><br>
+
+                                <strong>b) 短期融资成本比较：</strong><br>
+                                公司需要短期融资50,000美元，期限3个月。有两个选择：<br>
+                                i. 银行贷款：年利率10%，需要20%的补偿性余额<br>
+                                ii. 商业票据：年利率8%，发行费用1,000美元<br>
+                                比较两种融资方式的有效年利率。（10分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算营运资本投资需求（15分）<br>
+                                b) 比较短期融资成本（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 8 Working Capital Management (Chp 15&16)</span>
+                            <div class="knowledge-point">
+                                <strong>营运资本管理 (Working Capital Management)</strong><br><br>
+                                
+                                <strong>【营运资本基础】</strong><br>
+                                • 营运资本：流动资产（存货、应收账款、有价证券、现金）<br>
+                                • 净营运资本：流动资产 - 流动负债<br>
+                                • 短期财务管理：管理流动资产和流动负债<br><br>
+                                
+                                <strong>【现金转换周期概念】</strong><br>
+                                • 定义：企业将投资于经营的现金转换为经营收到现金的时间长度<br>
+                                • 计算：<span class="formula-inline">CCC = 经营周期 - 平均付款期</span><br>
+                                • 经营周期：<span class="formula-inline">经营周期 = 平均存货期 + 平均收账期</span><br><br>
+                                
+                                <strong>【现金转换周期计算】</strong><br>
+                                • 平均存货期(AAI)：<span class="formula-inline">AAI = (平均存货/销货成本) × 365</span><br>
+                                • 平均收账期(ACP)：<span class="formula-inline">ACP = (平均应收账款/销售收入) × 365</span><br>
+                                • 平均付款期(APP)：<span class="formula-inline">APP = (平均应付账款/采购成本) × 365</span><br><br>
+                                
+                                <strong>【EOQ模型应用】</strong><br>
+                                • 总成本：<span class="formula-inline">总成本 = 订货成本 + 持有成本</span><br>
+                                • 最优订货量：使总成本最小的订货量<br>
+                                • 假设：需求恒定、前置时间确定、不允许缺货<br><br>
+                                
+                                <strong>【信用条件分析】</strong><br>
+                                • 信用条件格式：a/b net c（如2/10 net 30）<br>
+                                • a = 现金折扣百分比<br>
+                                • b = 折扣期天数<br>
+                                • c = 信用期天数<br><br>
+                                
+                                <strong>【营运资本管理策略】</strong><br>
+                                • 缩短现金转换周期<br>
+                                • 加快存货周转<br>
+                                • 加快应收账款回收<br>
+                                • 延缓应付账款支付（在不损害信用的前提下）
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 营运资本投资需求计算</div>
+                                
+                                <strong>基础数据：</strong><br>
+                                • 预计销售额：800,000美元<br>
+                                • 预计销货成本：800,000 × 70% = 560,000美元<br>
+                                • 应收账款周转期：40天<br>
+                                • 存货周转期：50天<br>
+                                • 应付账款周转期：35天
+
+                                <div class="calculation">
+                                <strong>步骤1：计算各项营运资本组成</strong><br>
+                                应收账款 = (销售额 ÷ 365) × 应收账款周转期<br>
+                                = (800,000 ÷ 365) × 40 = 87,671美元<br><br>
+
+                                存货 = (销货成本 ÷ 365) × 存货周转期<br>
+                                = (560,000 ÷ 365) × 50 = 76,712美元<br><br>
+
+                                应付账款 = (销货成本 ÷ 365) × 应付账款周转期<br>
+                                = (560,000 ÷ 365) × 35 = 53,699美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>步骤2：计算净营运资本需求</strong><br>
+                                营运资本投资 = 应收账款 + 存货 - 应付账款<br>
+                                = 87,671 + 76,712 - 53,699<br>
+                                = 110,684美元
+                                </div>
+
+                                <div class="result">
+                                所需营运资本投资 = $110,684
+                                </div>
+
+                                <div class="calculation">
+                                <strong>验证：现金转换周期法</strong><br>
+                                CCC = 40 + 50 - 35 = 55天<br>
+                                日均销货成本 = 560,000 ÷ 365 = 1,534美元<br>
+                                营运资本需求 = 1,534 × 55 = 84,370美元（基于销货成本）<br>
+                                加上应收账款超出销货成本部分：87,671 - (1,534 × 40) = 26,314美元<br>
+                                总计：84,370 + 26,314 = 110,684美元 ✓
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 短期融资成本比较</div>
+                                
+                                <strong>方案一：银行贷款</strong><br>
+                                • 融资需求：50,000美元<br>
+                                • 年利率：10%<br>
+                                • 补偿性余额：20%<br>
+                                • 期限：3个月
+
+                                <div class="calculation">
+                                由于需要20%补偿性余额，实际借款金额：<br>
+                                实际借款 = 50,000 ÷ (1 - 0.20) = 62,500美元<br>
+                                
+                                3个月利息费用：<br>
+                                利息 = 62,500 × 10% × (3/12) = 1,563美元<br>
+                                
+                                有效年利率：<br>
+                                = (1,563 ÷ 50,000) × (12/3) = 12.5%
+                                </div>
+
+                                <strong>方案二：商业票据</strong><br>
+                                • 融资金额：50,000美元<br>
+                                • 年利率：8%<br>
+                                • 发行费用：1,000美元<br>
+                                • 期限：3个月
+
+                                <div class="calculation">
+                                3个月利息费用：<br>
+                                利息 = 50,000 × 8% × (3/12) = 1,000美元<br>
+                                
+                                总成本 = 利息 + 发行费用 = 1,000 + 1,000 = 2,000美元<br>
+                                
+                                有效年利率：<br>
+                                = (2,000 ÷ 50,000) × (12/3) = 16%
+                                </div>
+
+                                <div class="result">
+                                融资成本比较：<br>
+                                • 银行贷款有效年利率：12.5%<br>
+                                • 商业票据有效年利率：16%<br><br>
+                                建议：选择银行贷款，成本更低
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 8 问题三 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 8 - 问题三：存货管理与现金管理</div>
+                            <div class="question-content">
+                                <strong>a) 存货控制系统比较：</strong><br>
+                                一家公司正在比较两种存货控制系统：<br><br>
+
+                                当前系统：<br>
+                                • 平均存货：150,000美元<br>
+                                • 年存货持有成本率：20%<br>
+                                • 缺货成本：5,000美元/年<br><br>
+
+                                新系统：<br>
+                                • 平均存货：120,000美元<br>
+                                • 年存货持有成本率：20%<br>
+                                • 缺货成本：8,000美元/年<br>
+                                • 系统改进成本：2,000美元/年<br>
+                                哪个系统更经济？（15分）<br><br>
+
+                                <strong>b) 现金管理模型：</strong><br>
+                                使用米勒-奥尔模型，给定：<br>
+                                • 每次证券交易成本：50美元<br>
+                                • 日现金流变动标准差：1,000美元<br>
+                                • 年利率：8%<br>
+                                • 最低现金余额：5,000美元<br>
+                                计算最优现金余额区间。（10分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 比较存货控制系统的经济性（15分）<br>
+                                b) 计算最优现金余额区间（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 6 Inventory Management (Chp 13)</span>
+                            <span class="knowledge-tag">Topic 6 Cash Management (Chp 13)</span>
+                            <div class="knowledge-point">
+                                <strong>存货管理</strong><br>
+                                • 存货控制系统：第13章 Inventory Control Systems<br>
+                                • 存货持有成本：第13章 Inventory Carrying Costs<br>
+                                • 缺货成本分析：第13章 Stockout Costs<br><br>
+                                <strong>现金管理</strong><br>
+                                • 米勒-奥尔模型：第13章 Miller-Orr Model<br>
+                                • 现金管理策略：第13章 Cash Management Strategies<br>
+                                • 最优现金余额：第13章 Optimal Cash Balances
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 存货控制系统比较</div>
+                                
+                                <strong>当前系统年总成本：</strong><br>
+                                • 平均存货：150,000美元<br>
+                                • 存货持有成本：150,000 × 20% = 30,000美元<br>
+                                • 缺货成本：5,000美元<br>
+                                • 系统改进成本：0美元<br>
+                                • 总成本：35,000美元
+
+                                <strong>新系统年总成本：</strong><br>
+                                • 平均存货：120,000美元<br>
+                                • 存货持有成本：120,000 × 20% = 24,000美元<br>
+                                • 缺货成本：8,000美元<br>
+                                • 系统改进成本：2,000美元<br>
+                                • 总成本：34,000美元
+
+                                <div class="calculation">
+                                成本比较分析：<br>
+                                • 当前系统总成本：35,000美元<br>
+                                • 新系统总成本：34,000美元<br>
+                                • 年节约成本：35,000 - 34,000 = 1,000美元
+                                </div>
+
+                                <div class="result">
+                                建议：采用新系统<br>
+                                理由：新系统年总成本（34,000美元）低于当前系统（35,000美元），每年可节约1,000美元成本。虽然新系统缺货成本和系统改进成本较高，但存货持有成本的大幅降低使得总体成本更低。
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 米勒-奥尔模型现金管理</div>
+                                
+                                <div class="formula">米勒-奥尔模型公式：</div>
+                                <div class="formula">控制上限 = L + 3∛(3bσ²/4i)</div>
+                                <div class="formula">回归点 = L + ∛(3bσ²/4i)</div>
+
+                                给定数据：<br>
+                                • 每次交易成本(b) = 50美元<br>
+                                • 日现金流标准差(σ) = 1,000美元<br>
+                                • 年利率(i) = 8% = 0.08<br>
+                                • 日利率 = 0.08 ÷ 365 = 0.000219<br>
+                                • 最低现金余额(L) = 5,000美元
+
+                                <div class="calculation">
+                                <strong>步骤1：计算差额(Z)</strong><br>
+                                Z = ∛(3bσ²/4i)<br>
+                                = ∛(3 × 50 × 1,000² ÷ (4 × 0.000219))<br>
+                                = ∛(150,000,000 ÷ 0.000876)<br>
+                                = ∛(171,232,876,712)<br>
+                                = 5,554美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>步骤2：计算控制点</strong><br>
+                                回归点(R) = L + Z = 5,000 + 5,554 = 10,554美元<br>
+                                控制上限(H) = L + 3Z = 5,000 + (3 × 5,554) = 21,662美元<br>
+                                控制下限 = L = 5,000美元
+                                </div>
+
+                                <div class="result">
+                                最优现金余额区间：<br>
+                                • 控制下限：$5,000<br>
+                                • 回归点：$10,554<br>
+                                • 控制上限：$21,662<br><br>
+                                管理策略：当现金余额达到21,662美元时，投资16,662美元到有价证券，使现金余额回到10,554美元；当现金余额降至5,000美元时，出售5,554美元有价证券，使现金余额回到10,554美元。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 9 问题三 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 9 - 问题三：应收账款融资与营运资本优化</div>
+                            <div class="question-content">
+                                <strong>a) 应收账款保理融资：</strong><br>
+                                一家公司考虑将应收账款出售给保理商。相关信息：<br>
+                                • 月销售额：100,000美元<br>
+                                • 平均收账期：60天<br>
+                                • 保理费率：3%<br>
+                                • 预付比例：80%<br>
+                                • 预付资金利率：年利率15%<br>
+                                • 当前银行贷款利率：年利率12%<br>
+                                分析保理融资的成本效益。（15分）<br><br>
+
+                                <strong>b) 营运资本优化：</strong><br>
+                                公司当前营运资本政策：<br>
+                                • 应收账款：80,000美元（40天收账期）<br>
+                                • 存货：60,000美元（30天存货期）<br>
+                                • 应付账款：50,000美元（25天付款期）<br>
+                                • 年销售额：730,000美元<br>
+                                • 资本成本：10%<br>
+                                如果将收账期缩短到30天，存货期缩短到25天，分析对营运资本的影响。（10分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 分析应收账款保理融资的成本效益（15分）<br>
+                                b) 分析营运资本优化策略的影响（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 7 Accounts Receivable Financing (Chp 14)</span>
+                            <span class="knowledge-tag">Topic 6 Working Capital Optimization (Chp 13)</span>
+                            <div class="knowledge-point">
+                                <strong>应收账款融资</strong><br>
+                                • 保理融资：第14章 Factoring of Accounts Receivable<br>
+                                • 应收账款质押：第14章 Pledging Accounts Receivable<br>
+                                • 融资成本分析：第14章 Cost of Receivables Financing<br><br>
+                                <strong>营运资本优化</strong><br>
+                                • 营运资本政策：第13章 Working Capital Policies<br>
+                                • 现金转换周期优化：第13章 Cash Conversion Cycle Optimization<br>
+                                • 资本成本影响：第13章 Cost of Capital Effects
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 应收账款保理融资分析</div>
+                                
+                                <strong>基础数据：</strong><br>
+                                • 月销售额：100,000美元<br>
+                                • 平均收账期：60天<br>
+                                • 应收账款余额：(100,000 × 12 ÷ 365) × 60 = 197,260美元
+
+                                <div class="calculation">
+                                <strong>保理融资成本分析：</strong><br>
+                                月应收账款 = 100,000 × (60/30) = 200,000美元<br>
+                                保理费 = 200,000 × 3% = 6,000美元/月<br>
+                                年保理费 = 6,000 × 12 = 72,000美元<br><br>
+
+                                预付资金 = 200,000 × 80% = 160,000美元<br>
+                                剩余资金 = 200,000 × 20% = 40,000美元<br>
+                                预付资金利息（60天）= 160,000 × 15% × (60/365) = 3,945美元/月<br>
+                                年预付利息 = 3,945 × 12 = 47,342美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>保理融资总成本：</strong><br>
+                                年总成本 = 年保理费 + 年预付利息<br>
+                                = 72,000 + 47,342 = 119,342美元<br><br>
+
+                                有效年利率 = 119,342 ÷ 1,200,000 = 9.95%
+                                </div>
+
+                                <div class="calculation">
+                                <strong>与银行贷款比较：</strong><br>
+                                如果用银行贷款（12%）融资160,000美元：<br>
+                                年利息成本 = 160,000 × 12% = 19,200美元<br>
+                                但仍需自行管理应收账款，包括收账成本和坏账风险
+                                </div>
+
+                                <div class="result">
+                                分析结论：<br>
+                                保理融资年成本119,342美元，有效利率9.95%，低于银行贷款利率12%。但需考虑保理商承担收账风险和管理成本的价值。如果公司收账成本和坏账损失较高，保理融资可能更有利。
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 营运资本优化分析</div>
+                                
+                                <strong>当前营运资本政策：</strong><br>
+                                • 应收账款：80,000美元（40天）<br>
+                                • 存货：60,000美元（30天）<br>
+                                • 应付账款：50,000美元（25天）<br>
+                                • 净营运资本：90,000美元<br>
+                                • 现金转换周期：40 + 30 - 25 = 45天
+
+                                <div class="calculation">
+                                <strong>优化后的营运资本：</strong><br>
+                                日销售额 = 730,000 ÷ 365 = 2,000美元<br>
+                                日销货成本 ≈ 日销售额（假设）= 2,000美元<br><br>
+
+                                新应收账款 = 2,000 × 30 = 60,000美元<br>
+                                新存货 = 2,000 × 25 = 50,000美元<br>
+                                应付账款保持 = 50,000美元（25天不变）<br>
+                                新净营运资本 = 60,000 + 50,000 - 50,000 = 60,000美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>营运资本变化分析：</strong><br>
+                                营运资本减少 = 90,000 - 60,000 = 30,000美元<br>
+                                新现金转换周期 = 30 + 25 - 25 = 30天<br>
+                                周期缩短 = 45 - 30 = 15天
+                                </div>
+
+                                <div class="calculation">
+                                <strong>财务影响：</strong><br>
+                                释放资金 = 30,000美元<br>
+                                年节约资本成本 = 30,000 × 10% = 3,000美元<br>
+                                资本使用效率提升 = 30,000 ÷ 730,000 = 4.11%
+                                </div>
+
+                                <div class="result">
+                                优化效果：<br>
+                                • 净营运资本减少30,000美元<br>
+                                • 现金转换周期缩短15天<br>
+                                • 年节约资本成本3,000美元<br>
+                                • 提高资金使用效率和现金流<br><br>
+                                建议：实施营运资本优化策略，但需确保不会影响销售和客户关系。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 个人财务规划 -->
+        <div id="personal-finance" class="section">
+            <div class="section-header">
+                👤 个人财务规划 (Personal Financial Planning)
+            </div>
+            <table class="question-table">
+                <thead>
+                    <tr>
+                        <th class="question-cell">题目原文</th>
+                        <th class="knowledge-cell">知识点位置与描述</th>
+                        <th class="answer-cell">完整答案解析</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Set 5 问题四 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 5 - 问题四：退休规划与保险需求</div>
+                            <div class="question-content">
+                                <strong>a) 退休储蓄规划：</strong><br>
+                                张先生今年30岁，计划65岁退休。他希望退休后每年有50,000美元的收入，维持20年（65-85岁）。假设：<br>
+                                • 退休前投资收益率：8%<br>
+                                • 退休后投资收益率：5%<br>
+                                • 通胀率：3%<br>
+                                计算张先生每年需要储蓄的金额。（15分）<br><br>
+
+                                <strong>b) 人寿保险需求：</strong><br>
+                                李女士35岁，已婚，有两个孩子（5岁和8岁）。家庭年收入80,000美元，李女士贡献60%。现有储蓄50,000美元。估算李女士的人寿保险需求，假设：<br>
+                                • 收入替代期：至孩子18岁<br>
+                                • 收入替代比例：70%<br>
+                                • 投资收益率：6%<br>
+                                • 最终费用：20,000美元（10分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算年储蓄需求（15分）<br>
+                                b) 计算人寿保险需求（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 9 Personal Finance and Wealth Management (Chp 1&2)</span>
+                            <div class="knowledge-point">
+                                <strong>个人财务规划与财富管理 (Personal Finance and Wealth Management)</strong><br><br>
+                                
+                                <strong>【个人财务规划流程】</strong><br>
+                                1. 确定当前财务资源<br>
+                                2. 定义财务目标<br>
+                                3. 制定系统性财务计划<br>
+                                4. 实施计划<br>
+                                5. 监控结果并修正目标和计划<br><br>
+                                
+                                <strong>【个人财务报表】</strong><br>
+                                
+                                <strong>1. 资产负债表：</strong><br>
+                                • 资产：流动资产、投资、不动产、个人财产<br>
+                                • 负债：流动负债、长期负债<br>
+                                • 净资产 = 资产总额 - 负债总额<br><br>
+                                
+                                <strong>2. 收支表：</strong><br>
+                                • 收入：工资、奖金、利息、股利、租金收入<br>
+                                • 支出：生活费、资产购置、税收、债务偿付<br>
+                                • 现金盈余(赤字) = 总收入 - 总支出<br><br>
+                                
+                                <strong>【个人财务比率】</strong><br>
+                                • 偿债能力比率 = 净资产/总资产<br>
+                                • 流动性比率 = 流动资产/流动负债<br>
+                                • 储蓄比率 = 现金盈余/收入<br>
+                                • 债务偿付比率 = 贷款偿付/收入<br>
+                                • 杠杆比率 = 长期负债/总资产<br><br>
+                                
+                                <strong>【现金预算】</strong><br>
+                                • 月度收入和支出的详细短期财务预测<br>
+                                • 用于监控和控制支出<br>
+                                • 包含期望的储蓄/投资水平
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 退休储蓄规划</div>
+                                
+                                <strong>步骤1：计算退休时所需资金</strong><br>
+                                考虑通胀，65岁时的年收入需求：<br>
+                                实际年收入需求 = 50,000 × (1.03)³⁵ = 50,000 × 2.8139 = 140,695美元
+
+                                <div class="calculation">
+                                退休后20年年金的现值（65岁时）：<br>
+                                使用5%折现率计算20年年金现值：<br>
+                                PVIFA(5%, 20年) = [1 - (1.05)^-20] / 0.05 = 12.4622<br>
+                                所需退休资金 = 140,695 × 12.4622 = 1,753,234美元
+                                </div>
+
+                                <strong>步骤2：计算年储蓄需求</strong><br>
+                                从30岁到65岁，共35年储蓄期间<br>
+
+                                <div class="calculation">
+                                使用年金终值公式计算年储蓄：<br>
+                                FVIFA(8%, 35年) = [(1.08)^35 - 1] / 0.08 = 172.3168<br>
+                                年储蓄需求 = 1,753,234 ÷ 172.3168 = 10,175美元
+                                </div>
+
+                                <div class="result">
+                                张先生每年需要储蓄 $10,175
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 人寿保险需求分析</div>
+                                
+                                <strong>基础数据：</strong><br>
+                                • 李女士年收入贡献：80,000 × 60% = 48,000美元<br>
+                                • 需要替代的年收入：48,000 × 70% = 33,600美元<br>
+                                • 大孩子还有10年到18岁，小孩子还有13年<br>
+                                • 按较长期间13年计算收入替代期
+
+                                <div class="calculation">
+                                <strong>收入替代需求现值：</strong><br>
+                                PVIFA(6%, 13年) = [1 - (1.06)^-13] / 0.06 = 8.8527<br>
+                                收入替代现值 = 33,600 × 8.8527 = 297,451美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>总保险需求：</strong><br>
+                                • 收入替代需求：297,451美元<br>
+                                • 最终费用：20,000美元<br>
+                                • 总需求：317,451美元<br>
+                                • 减去现有储蓄：50,000美元<br>
+                                • 净保险需求：267,451美元
+                                </div>
+
+                                <div class="result">
+                                李女士的人寿保险需求 = $267,451
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 6 问题四 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 6 - 问题四：教育基金与投资组合</div>
+                            <div class="question-content">
+                                <strong>a) 教育基金规划：</strong><br>
+                                王先生的孩子现在5岁，预计13年后上大学。大学费用预计每年30,000美元，共4年。假设：<br>
+                                • 教育费用年增长率：5%<br>
+                                • 投资收益率：7%<br>
+                                计算王先生从现在开始每年需要储蓄的金额。（15分）<br><br>
+
+                                <strong>b) 投资组合分析：</strong><br>
+                                陈女士有100,000美元可投资，正在考虑以下投资组合：<br>
+                                • 股票：预期收益率12%，标准差20%<br>
+                                • 债券：预期收益率6%，标准差8%<br>
+                                • 股票与债券相关系数：0.3<br>
+                                如果陈女士投资70%股票，30%债券，计算投资组合的预期收益率和风险。（10分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算教育基金年储蓄需求（15分）<br>
+                                b) 计算投资组合收益率和风险（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 8 Personal Financial Planning (Chp 3)</span>
+                            <span class="knowledge-tag">Topic 2 Portfolio Theory (Chp 5)</span>
+                            <div class="knowledge-point">
+                                <strong>教育基金规划</strong><br>
+                                • 教育费用预测：第3章 Education Cost Planning<br>
+                                • 通胀调整计算：第3章 Inflation-Adjusted Planning<br>
+                                • 目标储蓄计算：第3章 Goal-Based Savings<br><br>
+                                <strong>投资组合理论</strong><br>
+                                • 投资组合收益率：第5章 Portfolio Expected Return<br>
+                                • 投资组合风险：第5章 Portfolio Risk and Standard Deviation<br>
+                                • 相关性分析：第5章 Correlation and Diversification
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 教育基金规划</div>
+                                
+                                <strong>步骤1：计算13年后的大学费用</strong><br>
+                                第1年大学费用（13年后）：<br>
+                                = 30,000 × (1.05)¹³ = 30,000 × 1.8856 = 56,568美元
+
+                                <div class="calculation">
+                                4年大学费用（按5%增长）：<br>
+                                • 第1年：56,568美元<br>
+                                • 第2年：56,568 × 1.05 = 59,396美元<br>
+                                • 第3年：59,396 × 1.05 = 62,366美元<br>
+                                • 第4年：62,366 × 1.05 = 65,484美元<br>
+                                总计：243,814美元
+                                </div>
+
+                                <strong>步骤2：计算13年后所需资金的现值</strong><br>
+                                
+                                <div class="calculation">
+                                将各年费用折现到13年后（孩子18岁时）：<br>
+                                • 第1年现值：56,568美元（无需折现）<br>
+                                • 第2年现值：59,396 ÷ 1.07 = 55,510美元<br>
+                                • 第3年现值：62,366 ÷ (1.07)² = 54,518美元<br>
+                                • 第4年现值：65,484 ÷ (1.07)³ = 53,482美元<br>
+                                13年后所需总资金：220,078美元
+                                </div>
+
+                                <strong>步骤3：计算年储蓄需求</strong><br>
+                                
+                                <div class="calculation">
+                                从现在开始13年的年储蓄：<br>
+                                FVIFA(7%, 13年) = [(1.07)¹³ - 1] / 0.07 = 20.1406<br>
+                                年储蓄需求 = 220,078 ÷ 20.1406 = 10,929美元
+                                </div>
+
+                                <div class="result">
+                                王先生每年需要储蓄 $10,929
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 投资组合分析</div>
+                                
+                                <strong>投资组合构成：</strong><br>
+                                • 股票权重(w₁) = 70% = 0.7<br>
+                                • 债券权重(w₂) = 30% = 0.3<br>
+                                • 股票预期收益率(r₁) = 12%<br>
+                                • 债券预期收益率(r₂) = 6%<br>
+                                • 股票标准差(σ₁) = 20%<br>
+                                • 债券标准差(σ₂) = 8%<br>
+                                • 相关系数(ρ₁₂) = 0.3
+
+                                <div class="calculation">
+                                <strong>投资组合预期收益率：</strong><br>
+                                E(Rp) = w₁ × r₁ + w₂ × r₂<br>
+                                E(Rp) = 0.7 × 12% + 0.3 × 6%<br>
+                                E(Rp) = 8.4% + 1.8% = 10.2%
+                                </div>
+
+                                <div class="calculation">
+                                <strong>投资组合标准差：</strong><br>
+                                σp = √[w₁²σ₁² + w₂²σ₂² + 2w₁w₂σ₁σ₂ρ₁₂]<br>
+                                σp = √[(0.7)²(0.20)² + (0.3)²(0.08)² + 2(0.7)(0.3)(0.20)(0.08)(0.3)]<br>
+                                σp = √[0.0196 + 0.000576 + 0.002016]<br>
+                                σp = √0.022192 = 0.1490 = 14.90%
+                                </div>
+
+                                <div class="result">
+                                投资组合分析结果：<br>
+                                • 预期收益率：10.2%<br>
+                                • 标准差（风险）：14.90%<br><br>
+                                通过分散投资，投资组合风险（14.90%）低于股票单独投资的风险（20%），体现了分散化效益。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 7 问题四 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 7 - 问题四：房贷分析与税务规划</div>
+                            <div class="question-content">
+                                <strong>a) 房屋贷款分析：</strong><br>
+                                赵先生购买价值300,000美元的房屋，首付20%，其余申请30年固定利率房贷。贷款利率为6%。计算：<br>
+                                i. 月还款额（5分）<br>
+                                ii. 第一年支付的利息总额（5分）<br>
+                                iii. 第一年支付的本金总额（5分）<br><br>
+
+                                <strong>b) 税务规划：</strong><br>
+                                孙女士年收入120,000美元，边际税率28%。她正考虑以下选择：<br>
+                                • 选择A：传统401(k)计划，年缴费15,000美元<br>
+                                • 选择B：罗斯401(k)计划，年缴费15,000美元<br>
+                                假设投资收益率8%，25年后退休。比较两种选择的税后收益。（10分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算房贷相关数据（15分）<br>
+                                b) 比较两种退休计划的税后收益（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 8 Personal Financial Planning (Chp 3)</span>
+                            <div class="knowledge-point">
+                                <strong>房屋贷款</strong><br>
+                                • 房贷还款计算：第3章 Mortgage Payment Calculations<br>
+                                • 本息分离：第3章 Principal and Interest Breakdown<br>
+                                • 摊销表分析：第3章 Amortization Analysis<br><br>
+                                <strong>税务规划</strong><br>
+                                • 退休账户比较：第3章 Retirement Account Types<br>
+                                • 税前与税后缴费：第3章 Pre-tax vs. After-tax Contributions<br>
+                                • 长期税务影响：第3章 Long-term Tax Implications
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 房屋贷款分析</div>
+                                
+                                <strong>基础数据：</strong><br>
+                                • 房屋价值：300,000美元<br>
+                                • 首付：300,000 × 20% = 60,000美元<br>
+                                • 贷款金额：300,000 - 60,000 = 240,000美元<br>
+                                • 贷款期限：30年（360个月）<br>
+                                • 年利率：6%，月利率 = 6% ÷ 12 = 0.5%
+
+                                <div class="calculation">
+                                <strong>i. 月还款额计算</strong><br>
+                                使用月还款公式：<br>
+                                PMT = P × [r(1+r)ⁿ] / [(1+r)ⁿ - 1]<br>
+                                其中：P = 240,000, r = 0.005, n = 360<br><br>
+                                
+                                PMT = 240,000 × [0.005(1.005)³⁶⁰] / [(1.005)³⁶⁰ - 1]<br>
+                                PMT = 240,000 × [0.005 × 6.0226] / [6.0226 - 1]<br>
+                                PMT = 240,000 × 0.0301 / 5.0226 = 1,439美元
+                                </div>
+
+                                <div class="result">
+                                i. 月还款额 = $1,439
+                                </div>
+
+                                <div class="calculation">
+                                <strong>ii. 第一年利息总额</strong><br>
+                                第1个月利息 = 240,000 × 0.5% = 1,200美元<br>
+                                第1个月本金 = 1,439 - 1,200 = 239美元<br>
+                                第2个月本金余额 = 240,000 - 239 = 239,761美元<br>
+                                第2个月利息 = 239,761 × 0.5% = 1,199美元<br>
+                                ...<br>
+                                第一年利息总额 ≈ 14,357美元
+                                </div>
+
+                                <div class="result">
+                                ii. 第一年利息总额 = $14,357
+                                </div>
+
+                                <div class="calculation">
+                                <strong>iii. 第一年本金总额</strong><br>
+                                第一年总还款 = 1,439 × 12 = 17,268美元<br>
+                                第一年本金总额 = 17,268 - 14,357 = 2,911美元
+                                </div>
+
+                                <div class="result">
+                                iii. 第一年本金总额 = $2,911
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 税务规划比较</div>
+                                
+                                <strong>选择A：传统401(k)计划</strong><br>
+                                • 年缴费：15,000美元（税前）<br>
+                                • 当前税收节省：15,000 × 28% = 4,200美元<br>
+                                • 实际成本：15,000 - 4,200 = 10,800美元
+
+                                <div class="calculation">
+                                25年后账户价值：<br>
+                                FVIFA(8%, 25年) = [(1.08)²⁵ - 1] / 0.08 = 73.1059<br>
+                                账户价值 = 15,000 × 73.1059 = 1,096,589美元<br>
+                                退休时需缴税（假设边际税率仍为28%）：<br>
+                                税后价值 = 1,096,589 × (1 - 0.28) = 789,544美元
+                                </div>
+
+                                <strong>选择B：罗斯401(k)计划</strong><br>
+                                • 年缴费：15,000美元（税后）<br>
+                                • 当前无税收优惠<br>
+                                • 实际成本：15,000美元
+
+                                <div class="calculation">
+                                25年后账户价值：<br>
+                                账户价值 = 15,000 × 73.1059 = 1,096,589美元<br>
+                                退休时无需缴税：<br>
+                                税后价值 = 1,096,589美元
+                                </div>
+
+                                <div class="result">
+                                比较结果：<br>
+                                • 传统401(k)税后价值：$789,544<br>
+                                • 罗斯401(k)税后价值：$1,096,589<br><br>
+                                建议：选择罗斯401(k)计划<br>
+                                理由：虽然当前没有税收优惠，但25年后的税后收益更高，差额为307,045美元。前提是退休时的边际税率不低于当前水平。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 8 问题四 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 8 - 问题四：应急基金与资产配置</div>
+                            <div class="question-content">
+                                <strong>a) 应急基金规划：</strong><br>
+                                马先生家庭月支出为5,000美元，双职工家庭，目前应急基金为8,000美元。财务顾问建议建立6个月的应急基金。计算：<br>
+                                i. 应急基金目标金额（5分）<br>
+                                ii. 还需要增加的金额（5分）<br>
+                                iii. 如果每月储蓄500美元，需要多长时间达到目标？（5分）<br><br>
+
+                                <strong>b) 生命周期资产配置：</strong><br>
+                                根据年龄进行资产配置规划：<br>
+                                • 30岁投资者：风险承受能力高<br>
+                                • 50岁投资者：风险承受能力中等<br>
+                                • 65岁投资者：风险承受能力低<br>
+                                假设可选择股票（高风险高收益）和债券（低风险低收益），为三个年龄段设计合适的资产配置方案。（10分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算应急基金相关数据（15分）<br>
+                                b) 设计生命周期资产配置方案（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 8 Personal Financial Planning (Chp 3)</span>
+                            <span class="knowledge-tag">Topic 2 Asset Allocation (Chp 5)</span>
+                            <div class="knowledge-point">
+                                <strong>应急基金规划</strong><br>
+                                • 应急基金需求分析：第3章 Emergency Fund Planning<br>
+                                • 流动性管理：第3章 Liquidity Management<br>
+                                • 储蓄目标设定：第3章 Savings Goal Setting<br><br>
+                                <strong>资产配置</strong><br>
+                                • 生命周期投资：第5章 Life-Cycle Investing<br>
+                                • 风险承受能力：第5章 Risk Tolerance Assessment<br>
+                                • 年龄与资产配置：第5章 Age-Based Asset Allocation
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 应急基金规划</div>
+                                
+                                <strong>基础数据：</strong><br>
+                                • 家庭月支出：5,000美元<br>
+                                • 当前应急基金：8,000美元<br>
+                                • 建议应急基金：6个月支出
+
+                                <div class="calculation">
+                                <strong>i. 应急基金目标金额</strong><br>
+                                目标金额 = 月支出 × 6个月<br>
+                                目标金额 = 5,000 × 6 = 30,000美元
+                                </div>
+
+                                <div class="result">
+                                i. 应急基金目标金额 = $30,000
+                                </div>
+
+                                <div class="calculation">
+                                <strong>ii. 还需要增加的金额</strong><br>
+                                需要增加 = 目标金额 - 当前金额<br>
+                                需要增加 = 30,000 - 8,000 = 22,000美元
+                                </div>
+
+                                <div class="result">
+                                ii. 还需要增加的金额 = $22,000
+                                </div>
+
+                                <div class="calculation">
+                                <strong>iii. 达到目标所需时间</strong><br>
+                                每月储蓄 = 500美元<br>
+                                所需时间 = 22,000 ÷ 500 = 44个月 = 3年8个月
+                                </div>
+
+                                <div class="result">
+                                iii. 需要44个月（3年8个月）达到目标
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 生命周期资产配置方案</div>
+                                
+                                <strong>资产配置原则：</strong><br>
+                                • 年轻时：高风险高收益，投资期长<br>
+                                • 中年时：平衡风险与收益<br>
+                                • 老年时：保守稳健，保护资本
+
+                                <div class="calculation">
+                                <strong>30岁投资者（积极型）：</strong><br>
+                                • 股票配置：80%<br>
+                                • 债券配置：20%<br>
+                                理由：投资期长（35年），可承受短期波动，追求长期增长
+                                </div>
+
+                                <div class="calculation">
+                                <strong>50岁投资者（平衡型）：</strong><br>
+                                • 股票配置：60%<br>
+                                • 债券配置：40%<br>
+                                理由：接近退休（15年），需要平衡增长与稳定性
+                                </div>
+
+                                <div class="calculation">
+                                <strong>65岁投资者（保守型）：</strong><br>
+                                • 股票配置：30%<br>
+                                • 债券配置：70%<br>
+                                理由：已退休或即将退休，重点保护本金，确保稳定收入
+                                </div>
+
+                                <div class="result">
+                                生命周期资产配置建议：<br>
+                                遵循"100减去年龄"原则作为股票配置的参考基准，但可根据个人风险偏好、财务状况和市场环境进行调整。随着年龄增长，逐步降低股票比例，增加债券等稳健资产比例。
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Set 9 问题四 -->
+                    <tr>
+                        <td class="question-cell">
+                            <div class="question-title">Set 9 - 问题四：遗产规划与财务目标</div>
+                            <div class="question-content">
+                                <strong>a) 遗产税规划：</strong><br>
+                                周先生70岁，预计遗产价值为500万美元。根据当前税法：<br>
+                                • 遗产税免税额：350万美元<br>
+                                • 超过免税额部分的税率：40%<br>
+                                • 慈善捐赠可以全额抵扣<br>
+                                计算：<br>
+                                i. 不进行任何规划的遗产税（5分）<br>
+                                ii. 如果捐赠100万美元给慈善机构，遗产税是多少？（5分）<br>
+                                iii. 捐赠的净成本是多少？（5分）<br><br>
+
+                                <strong>b) 综合财务目标规划：</strong><br>
+                                胡女士32岁，制定了以下财务目标：<br>
+                                • 3年后购买价值50万美元的房屋（首付20%）<br>
+                                • 孩子15年后上大学（需要20万美元）<br>
+                                • 35年后退休（需要100万美元）<br>
+                                假设投资收益率为6%，计算胡女士每月总储蓄需求。（10分）
+                            </div>
+                            <div class="sub-question">
+                                <strong>要求：</strong><br>
+                                a) 计算遗产税规划数据（15分）<br>
+                                b) 计算综合财务目标的储蓄需求（10分）
+                            </div>
+                        </td>
+                        <td class="knowledge-cell">
+                            <span class="knowledge-tag">Topic 9 Personal Finance and Wealth Management (Chp 1&2)</span>
+                            <div class="knowledge-point">
+                                <strong>个人财务规划与财富管理 (Personal Finance and Wealth Management)</strong><br><br>
+                                
+                                <strong>【遗产规划基础】</strong><br>
+                                • 遗产：个人死亡时的总资产减去债务<br>
+                                • 遗产税：对超过免税额的遗产征收的税费<br>
+                                • 遗嘱：法律文件，指定遗产分配和受益人<br>
+                                • 信托：法律安排，允许第三方代表受益人持有资产<br><br>
+                                
+                                <strong>【遗产税计算】</strong><br>
+                                <div class="formula">应纳遗产税 = (遗产总额 - 免税额) × 税率</div>
+                                • 联邦遗产税免税额：根据年度调整<br>
+                                • 慈善捐赠：可全额从应税遗产中扣除<br>
+                                • 配偶转移：可使用无限制夫妻扣除<br><br>
+                                
+                                <strong>【财务目标规划策略】</strong><br>
+                                • SMART目标原则：具体、可测量、可实现、相关、有时限<br>
+                                • 目标分类：短期（1年内）、中期（1-5年）、长期（5年以上）<br>
+                                • 优先级排序：紧急性和重要性矩阵<br><br>
+                                
+                                <strong>【多目标储蓄计算】</strong><br>
+                                • 未来价值年金：<span class="formula-inline">FV = PMT × FVIFA(r,n)</span><br>
+                                • 每期付款额：<span class="formula-inline">PMT = FV ÷ FVIFA(r,n)</span><br>
+                                • 同时实现多个目标：分别计算各目标储蓄需求<br><br>
+                                
+                                <strong>【税务优化策略】</strong><br>
+                                • 税前储蓄：401(k)、IRA等退休账户<br>
+                                • 税后储蓄：Roth IRA、一般投资账户<br>
+                                • 税收递延：推迟纳税义务到未来较低税率期间
+                            </div>
+                        </td>
+                        <td class="answer-cell">
+                            <div class="answer-section">
+                                <div class="answer-header">a) 遗产税规划</div>
+                                
+                                <strong>基础数据：</strong><br>
+                                • 遗产总价值：500万美元<br>
+                                • 遗产税免税额：350万美元<br>
+                                • 超额部分税率：40%
+
+                                <div class="calculation">
+                                <strong>i. 不进行规划的遗产税</strong><br>
+                                应税遗产 = 总遗产 - 免税额<br>
+                                应税遗产 = 500万 - 350万 = 150万美元<br>
+                                遗产税 = 150万 × 40% = 60万美元
+                                </div>
+
+                                <div class="result">
+                                i. 不进行规划的遗产税 = $60万
+                                </div>
+
+                                <div class="calculation">
+                                <strong>ii. 捐赠100万后的遗产税</strong><br>
+                                捐赠后遗产 = 500万 - 100万 = 400万美元<br>
+                                应税遗产 = 400万 - 350万 = 50万美元<br>
+                                遗产税 = 50万 × 40% = 20万美元
+                                </div>
+
+                                <div class="result">
+                                ii. 捐赠100万后的遗产税 = $20万
+                                </div>
+
+                                <div class="calculation">
+                                <strong>iii. 捐赠的净成本</strong><br>
+                                节省的遗产税 = 60万 - 20万 = 40万美元<br>
+                                捐赠净成本 = 捐赠金额 - 节省的税额<br>
+                                捐赠净成本 = 100万 - 40万 = 60万美元
+                                </div>
+
+                                <div class="result">
+                                iii. 捐赠的净成本 = $60万<br>
+                                通过捐赠100万美元，实际只损失60万美元，同时还能支持慈善事业。
+                                </div>
+                            </div>
+
+                            <div class="answer-section">
+                                <div class="answer-header">b) 综合财务目标规划</div>
+                                
+                                <strong>目标分析：</strong><br>
+                                • 目标1：3年后房屋首付 = 50万 × 20% = 10万美元<br>
+                                • 目标2：15年后教育基金 = 20万美元<br>
+                                • 目标3：35年后退休基金 = 100万美元<br>
+                                • 投资收益率：6%
+
+                                <div class="calculation">
+                                <strong>目标1：房屋首付储蓄</strong><br>
+                                月利率 = 6% ÷ 12 = 0.5%<br>
+                                FVIFA(0.5%, 36个月) = [(1.005)³⁶ - 1] / 0.005 = 39.3361<br>
+                                月储蓄需求 = 100,000 ÷ 39.3361 = 2,542美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>目标2：教育基金储蓄</strong><br>
+                                FVIFA(0.5%, 180个月) = [(1.005)¹⁸⁰ - 1] / 0.005 = 290.8187<br>
+                                月储蓄需求 = 200,000 ÷ 290.8187 = 688美元
+                                </div>
+
+                                <div class="calculation">
+                                <strong>目标3：退休基金储蓄</strong><br>
+                                FVIFA(0.5%, 420个月) = [(1.005)⁴²⁰ - 1] / 0.005 = 1,991.4906<br>
+                                月储蓄需求 = 1,000,000 ÷ 1,991.4906 = 502美元
+                                </div>
+
+                                <div class="result">
+                                综合月储蓄需求：<br>
+                                • 房屋首付：$2,542/月（3年）<br>
+                                • 教育基金：$688/月（15年）<br>
+                                • 退休基金：$502/月（35年）<br><br>
+                                前3年总需求：2,542 + 688 + 502 = $3,732/月<br>
+                                3年后：688 + 502 = $1,190/月<br>
+                                15年后：502 = $502/月
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; color: #7f8c8d; border-top: 1px solid #e9ecef;">
+            <p><strong>🎉 完整版本已构建完成！</strong></p>
+            <div style="display: flex; justify-content: center; gap: 20px; margin: 15px 0; flex-wrap: wrap;">
+                <span style="color: #28a745;">✓ 资本预算技术</span>
+                <span style="color: #28a745;">✓ 债券估值</span>
+                <span style="color: #28a745;">✓ 股票估值与资本成本</span>
+                <span style="color: #28a745;">✓ 营运资本管理</span>
+                <span style="color: #28a745;">✓ 个人财务规划</span>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 15px;">
+                <strong>覆盖范围：</strong>包含所有5套试卷（Sets 5-9）的原题、原答案和详细知识点描述<br>
+                <strong>题目数量：</strong>每套试卷4个主要问题，共20个核心问题，100%完整收录<br>
+                <strong>知识点：</strong>涵盖DBA财务管理课程8个主要主题领域<br>
+                <strong>答案质量：</strong>包含完整计算过程、公式应用和决策分析
+            </p>
+        </div>
+                </div>
+                
+    <script>
+        // 平滑滚动导航
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 表格行点击高亮
+        document.querySelectorAll('.question-table tr').forEach(row => {
+            row.addEventListener('click', function() {
+                document.querySelectorAll('.question-table tr').forEach(r => {
+                    r.style.backgroundColor = '';
+                });
+                this.style.backgroundColor = '#e3f2fd';
+                setTimeout(() => {
+                    this.style.backgroundColor = '';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

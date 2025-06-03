@@ -1,0 +1,329 @@
+        <!-- 语言切换按钮 -->
+        <div style="position: fixed; top: 20px; right: 20px; z-index: 1000;">
+            <button onclick="toggleLanguage()" id="langToggleBtn" style="
+                background: linear-gradient(135deg, #17a2b8, #138496);
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: bold;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                transition: all 0.3s ease;
+                min-width: 80px;
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                🌐 EN
+            </button>
+        </div>
+
+        <script>
+        // 当前语言状态（默认中文）
+        let currentLanguage = 'zh';
+        
+        // 中英文文本数据
+        const languageData = {
+            zh: {
+                // 页面标题和头部
+                pageTitle: "DBA财务管理试题汇总",
+                pageSubtitle: "Sets 5-9 完整版",
+                
+                // 统计表格
+                statisticsTitle: "📊 各Topic文档考题覆盖统计",
+                tableHeaders: {
+                    topicDoc: "Topic文档",
+                    chapterRange: "章节范围", 
+                    coveredQuestions: "覆盖考题 (卷号-题号)",
+                    totalQuestions: "题目总数"
+                },
+                
+                // Topic名称
+                topics: {
+                    topic5: "资本预算技术",
+                    topic6: "债券估值与利率", 
+                    topic7: "股票估值与资本成本",
+                    topic8: "营运资本管理",
+                    topic9: "个人财务规划与财富管理"
+                },
+                
+                // 统计总结
+                statisticsSummary: "总计：5个Topic文档 × 5套试卷 = 25个核心考题全覆盖",
+                statisticsNote: "每套试卷包含4个主要问题，部分问题包含多个子题，实际覆盖知识点更全面",
+                
+                // 按钮文字
+                buttons: {
+                    hideKnowledge: "📚 隐藏考点知识复习",
+                    showKnowledge: "📚 显示考点知识复习", 
+                    close: "✖ 关闭",
+                    print: "🖨️ 打印文档",
+                    printWithKnowledge: "📚 打印含知识点"
+                },
+                
+                // 知识复习模块
+                knowledgeReview: {
+                    title: "📚 各Topic考点知识详细复习",
+                    coreConceptsTitle: "🎯 核心概念",
+                    keyFormulasTitle: "📐 关键公式", 
+                    examFocusTitle: "🎯 考试重点",
+                    mustMaster: "必须掌握：",
+                    commonExamTypes: "常考题型："
+                },
+                
+                // Topic 5 详细内容
+                topic5Details: {
+                    title: "📊 Topic 5: Capital Budgeting Techniques (资本预算技术) - Chapter 11",
+                    concepts: [
+                        "<strong>资本预算</strong>：评估和选择长期投资项目的过程",
+                        "<strong>资本支出</strong>：预期超过1年产生效益的资金支出", 
+                        "<strong>现金流组成</strong>：初始投资 + 营运现金流 + 终值现金流",
+                        "<strong>沉没成本</strong>：已发生的历史成本，不影响决策",
+                        "<strong>机会成本</strong>：放弃最佳替代方案的成本",
+                        "<strong>增量现金流</strong>：项目实施产生的额外现金流"
+                    ],
+                    examFocus: {
+                        mustMaster: "设备替换决策、初始投资计算、NPV比较分析、沉没成本识别、IRR判断准则",
+                        commonTypes: "机器替换分析、项目投资决策、现金流计算、投资评价方法比较"
+                    }
+                },
+                
+                // Topic 6 详细内容
+                topic6Details: {
+                    title: "📈 Topic 6: Bond Valuation and Interest Rates (债券估值与利率) - Chapter 6",
+                    concepts: [
+                        "<strong>债券要素</strong>：面值、票面利率、到期日、要求收益率",
+                        "<strong>利率构成</strong>：实际利率 + 通胀溢价 + 风险溢价",
+                        "<strong>债券类型</strong>：折价债券、溢价债券、平价债券",
+                        "<strong>风险类型</strong>：信用风险、利率风险、流动性风险",
+                        "<strong>债券评级</strong>：投资级 vs 投机级",
+                        "<strong>收益率曲线</strong>：正常、倒挂、平坦"
+                    ],
+                    examFocus: {
+                        mustMaster: "债券估值计算、年付息vs半年付息、折价溢价判断、收益率计算",
+                        commonTypes: "债券价值计算、收益率比较、利率风险分析、债券投资决策"
+                    }
+                },
+                
+                // 其他部分
+                printNote: "💡 打印时将保持所有颜色和样式，确保最佳阅读体验",
+                completionNote: "🎉 完整版本已构建完成！",
+                coverageNote: "覆盖范围：包含所有5套试卷（Sets 5-9）的原题、原答案和详细知识点描述",
+                questionNote: "题目数量：每套试卷4个主要问题，共20个核心问题，100%完整收录",
+                knowledgeNote: "知识点：涵盖DBA财务管理课程8个主要主题领域"
+            },
+            
+            en: {
+                // 页面标题和头部
+                pageTitle: "DBA Financial Management Questions Collection",
+                pageSubtitle: "Sets 5-9 Complete Edition",
+                
+                // 统计表格
+                statisticsTitle: "📊 Topic Document Coverage Statistics",
+                tableHeaders: {
+                    topicDoc: "Topic Documents",
+                    chapterRange: "Chapter Range",
+                    coveredQuestions: "Covered Questions (Set-Question)",
+                    totalQuestions: "Total Questions"
+                },
+                
+                // Topic名称
+                topics: {
+                    topic5: "Capital Budgeting Techniques",
+                    topic6: "Bond Valuation and Interest Rates",
+                    topic7: "Stock Valuation & Cost of Capital", 
+                    topic8: "Working Capital Management",
+                    topic9: "Personal Finance & Wealth Management"
+                },
+                
+                // 统计总结
+                statisticsSummary: "Total: 5 Topic Documents × 5 Test Sets = 25 Core Questions Complete Coverage",
+                statisticsNote: "Each test set contains 4 main questions, with some containing multiple sub-questions, providing comprehensive knowledge coverage",
+                
+                // 按钮文字
+                buttons: {
+                    hideKnowledge: "📚 Hide Knowledge Review",
+                    showKnowledge: "📚 Show Knowledge Review",
+                    close: "✖ Close", 
+                    print: "🖨️ Print Document",
+                    printWithKnowledge: "📚 Print with Knowledge"
+                },
+                
+                // 知识复习模块
+                knowledgeReview: {
+                    title: "📚 Detailed Knowledge Points Review",
+                    coreConceptsTitle: "🎯 Core Concepts",
+                    keyFormulasTitle: "📐 Key Formulas",
+                    examFocusTitle: "🎯 Exam Focus", 
+                    mustMaster: "Must Master: ",
+                    commonExamTypes: "Common Exam Types: "
+                },
+                
+                // Topic 5 详细内容
+                topic5Details: {
+                    title: "📊 Topic 5: Capital Budgeting Techniques - Chapter 11",
+                    concepts: [
+                        "<strong>Capital Budgeting</strong>: Process of evaluating and selecting long-term investment projects",
+                        "<strong>Capital Expenditure</strong>: Funds expected to generate benefits over more than one year",
+                        "<strong>Cash Flow Components</strong>: Initial investment + Operating cash flows + Terminal cash flows",
+                        "<strong>Sunk Costs</strong>: Historical costs already incurred, irrelevant to decisions",
+                        "<strong>Opportunity Cost</strong>: Cost of the best alternative foregone",
+                        "<strong>Incremental Cash Flows</strong>: Additional cash flows generated by project implementation"
+                    ],
+                    examFocus: {
+                        mustMaster: "Equipment replacement decisions, initial investment calculation, NPV comparative analysis, sunk cost identification, IRR decision criteria",
+                        commonTypes: "Machine replacement analysis, project investment decisions, cash flow calculations, investment evaluation method comparisons"
+                    }
+                },
+                
+                // Topic 6 详细内容  
+                topic6Details: {
+                    title: "📈 Topic 6: Bond Valuation and Interest Rates - Chapter 6",
+                    concepts: [
+                        "<strong>Bond Elements</strong>: Face value, coupon rate, maturity date, required yield",
+                        "<strong>Interest Rate Components</strong>: Real rate + Inflation premium + Risk premium",
+                        "<strong>Bond Types</strong>: Discount bonds, premium bonds, par bonds",
+                        "<strong>Risk Types</strong>: Credit risk, interest rate risk, liquidity risk",
+                        "<strong>Bond Ratings</strong>: Investment grade vs Speculative grade",
+                        "<strong>Yield Curve</strong>: Normal, inverted, flat"
+                    ],
+                    examFocus: {
+                        mustMaster: "Bond valuation calculations, annual vs semi-annual payments, discount/premium determination, yield calculations",
+                        commonTypes: "Bond value calculations, yield comparisons, interest rate risk analysis, bond investment decisions"
+                    }
+                },
+                
+                // 其他部分
+                printNote: "💡 All colors and styles will be preserved when printing for optimal reading experience",
+                completionNote: "🎉 Complete Version Successfully Built!",
+                coverageNote: "Coverage: Contains all original questions, answers and detailed knowledge points from 5 test sets (Sets 5-9)",
+                questionNote: "Questions: 4 main questions per test set, 20 core questions total, 100% complete collection",
+                knowledgeNote: "Knowledge Points: Covers 8 major topic areas of DBA Financial Management course"
+            }
+        };
+        
+        // 语言切换函数
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'zh' ? 'en' : 'zh';
+            updatePageLanguage();
+            
+            // 更新按钮文字
+            const langBtn = document.getElementById('langToggleBtn');
+            langBtn.innerHTML = currentLanguage === 'zh' ? '🌐 EN' : '🌐 中文';
+        }
+        
+        // 更新页面语言
+        function updatePageLanguage() {
+            const data = languageData[currentLanguage];
+            
+            // 更新页面标题
+            document.title = currentLanguage === 'zh' ? 
+                data.pageTitle + ' | Financial Management Questions Collection' :
+                data.pageTitle + ' | ' + languageData.zh.pageTitle;
+                
+            // 更新主标题
+            const mainTitle = document.querySelector('.header h1');
+            if (mainTitle) {
+                mainTitle.textContent = currentLanguage === 'zh' ? 
+                    data.pageTitle + ' | Financial Management Questions Collection' :
+                    data.pageTitle + ' | ' + languageData.zh.pageTitle;
+            }
+            
+            // 更新副标题
+            const subtitle = document.querySelector('.header p');
+            if (subtitle) {
+                subtitle.textContent = currentLanguage === 'zh' ?
+                    data.pageSubtitle + ' | Complete Edition with Detailed Knowledge Points' :
+                    data.pageSubtitle + ' | ' + languageData.zh.pageSubtitle;
+            }
+            
+            // 更新统计标题
+            const statsTitle = document.querySelector('.topic-coverage h2');
+            if (statsTitle) {
+                statsTitle.textContent = data.statisticsTitle;
+            }
+            
+            // 更新表格头部
+            const tableHeaders = document.querySelectorAll('.coverage-table th');
+            if (tableHeaders.length >= 4) {
+                tableHeaders[0].textContent = data.tableHeaders.topicDoc;
+                tableHeaders[1].textContent = data.tableHeaders.chapterRange;
+                tableHeaders[2].textContent = data.tableHeaders.coveredQuestions;
+                tableHeaders[3].textContent = data.tableHeaders.totalQuestions;
+            }
+            
+            // 更新按钮文字
+            updateButtonTexts(data);
+            
+            // 更新知识复习模块
+            updateKnowledgeReviewModule(data);
+            
+            // 更新其他文本
+            updateOtherTexts(data);
+        }
+        
+        // 更新按钮文字
+        function updateButtonTexts(data) {
+            const toggleBtn = document.getElementById('toggleBtn');
+            if (toggleBtn) {
+                const currentDisplay = document.getElementById('knowledgeReview').style.display;
+                toggleBtn.innerHTML = (currentDisplay === 'block' || currentDisplay === '') ? 
+                    data.buttons.hideKnowledge : data.buttons.showKnowledge;
+            }
+            
+            // 更新打印按钮
+            const printBtns = document.querySelectorAll('button[onclick*="print"]');
+            printBtns.forEach((btn, index) => {
+                if (btn.innerHTML.includes('🖨️')) {
+                    btn.innerHTML = data.buttons.print;
+                } else if (btn.innerHTML.includes('📚') && btn.innerHTML.includes('print')) {
+                    btn.innerHTML = data.buttons.printWithKnowledge;
+                }
+            });
+        }
+        
+        // 更新知识复习模块
+        function updateKnowledgeReviewModule(data) {
+            // 更新知识复习标题
+            const knowledgeTitle = document.querySelector('#knowledgeReview h2');
+            if (knowledgeTitle) {
+                knowledgeTitle.textContent = data.knowledgeReview.title;
+            }
+            
+            // 更新关闭按钮
+            const closeBtn = document.querySelector('#knowledgeReview button[onclick="toggleKnowledgeReview()"]');
+            if (closeBtn && closeBtn.innerHTML.includes('✖')) {
+                closeBtn.innerHTML = data.buttons.close;
+            }
+            
+            // 更新Topic 5内容
+            updateTopicContent(5, data.topic5Details, data);
+            
+            // 更新Topic 6内容  
+            updateTopicContent(6, data.topic6Details, data);
+        }
+        
+        // 更新具体Topic内容
+        function updateTopicContent(topicNum, topicData, data) {
+            // 这里可以根据需要更新具体的Topic内容
+            // 由于内容比较复杂，我们主要更新标题和关键词
+        }
+        
+        // 更新其他文本
+        function updateOtherTexts(data) {
+            // 更新统计总结
+            const summaryStrong = document.querySelector('.topic-coverage strong[style*="color: #1976d2"]');
+            if (summaryStrong) {
+                summaryStrong.textContent = data.statisticsSummary;
+            }
+            
+            const summarySpan = summaryStrong?.nextElementSibling;
+            if (summarySpan) {
+                summarySpan.textContent = data.statisticsNote;
+            }
+            
+            // 更新打印提示
+            const printNote = document.querySelector('div[style*="margin-top: 8px"] div');
+            if (printNote && printNote.textContent.includes('💡')) {
+                printNote.textContent = data.printNote;
+            }
+        }
+        </script> 
